@@ -1,0 +1,41 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadCIFeeds.sh 
+JCW_DETAILS JCW_SKU
+
+=========================================================================================================
+UPLOADING JCW_DETAILS
+-rw-r--r-- 1 root root 3.4G Jul 22 17:03 jcw_froogle1.txt
+-rw-r--r-- 1 root root 3.5G Jul 22 17:09 jcw_froogle2.txt
+-rw-r--r-- 1 root root 3.0G Jul 22 17:15 jcw_froogle3.txt
+-rw-r--r-- 1 root root 594M Jul 22 17:20 compressed_jcw_feed.zip
+-rw-r--r-- 1 root root 248M Jul 22 17:05 jcw_froogle1.zip
+-rw-r--r-- 1 root root 183M Jul 22 17:10 jcw_froogle2.zip
+-rw-r--r-- 1 root root 165M Jul 22 17:17 jcw_froogle3.zip
+3.4G	jcw_froogle1.txt
+3.5G	jcw_froogle2.txt
+3.0G	jcw_froogle3.txt
+JCW Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle1.zip to /jcw_froogle1.zip
+Uploading jcw_froogle2.zip to /jcw_froogle2.zip
+Uploading jcw_froogle3.zip to /jcw_froogle3.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING JCW_SKU
+-rw-r--r-- 1 root root 1.3G Jul 22 15:39 jcw_froogle4.txt
+-rw-r--r-- 1 root root 111M Jul 22 15:40 jcw_froogle4.zip
+1.3G	jcw_froogle4.txt
+JCW SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle4.zip to /jcw_froogle4.zip
+sftp> quit
+End :  date
+PLEASE SEND THE LOGS
+

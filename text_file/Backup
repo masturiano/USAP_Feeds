@@ -1,0 +1,13 @@
+Page: 1
+
+Free up Server Gen7&8 in the afternoon before go home.
+
+Check muna Gen02 dito ang destination ng mga backup
+
+Every tues, thu and sat
+
+[WHERE] EC2FEEDGEN07
+> sudo sh /data/feeds_script/move_backup_files.sh
+
+[WHERE] EC2FEEDGEN08
+> sudo sh /data/feeds_script/move_backup_files.sh

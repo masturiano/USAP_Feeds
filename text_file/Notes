@@ -1,0 +1,208 @@
+Date:2016-07-22
+
+IR => Rename ang file jcw_ci to jcw_ir
+Double qoute => Remove sa bawat field na meron notes.
+Link => change sa dulo
+	=gglpla (Wait the new format)
+
+Take Note => JCW Run tommorow
+
+----------------------------------------------------------
+
+Config file = /var/www/html/feeds_zf2feeds_ir/module/Feeds/config
+Module = /var/www/html/feeds_zf2feeds_ir/module/Feeds
+
+654
+
+str_replace('"',"'",$text);
+
+Meron notes:
+description
+Fit Note
+Product Details
+
+CI - Channel Intelligence
+IR - Impact Raduis
+
+find: jcw_ci_sku
+
+/var/www/html/feeds_zf2feeds_ir/data/input
+/data/aopi/feeds_longbow/output
+
+JCW SKU account.jcw_ci_sku.config.php
+PT SKU  account.pt_ci_sku.config.php
+STT SKU account.stt_ci_sku.config.php
+module/Feeds/Module.php
+dito /var/www/html/feeds_zf2feeds_production
+
+Esperanza Lomat
+account.jcw_ir_sku.config.php ok
+account.pt_ir_sku.config.php ok
+account.stt_ir_sku.config.php
+
+Test:
+pt and stt
+
+
+Production: /var/www/html/feeds_zf2feeds_production/data/input/pt_ci_sku/
+
+Run insert: 
+
+cd /var/www/html/feeds_zf2feeds_ir
+
+Screen name: mydel_jcw_ir_sku
+php public/index.php insert --account="jcw_ir_sku"
+php public/index.php insert --account="pt_ir_sku"
+php public/index.php insert --account="stt_ir_sku"
+
+Screen name: mydel_pt_ir_sku
+php public/index.php insert --account="pt_ir_sku"
+View screen: screen -ls
+Status: running 5:00PM done morning
+Date run: July 22 2016 done July 23 2016
+
+Screen name: mydel_stt_ir_sku
+php public/index.php insert --account="stt_ir_sku"
+
+-------------------------------------------------------------------
+=======================================================================================================
+-------------------------------------------------------------------
+Date: 2016-07-23
+
+Output file of pt_ir_sku: /data/aopi/feeds_longbow/output/pt_ir_sku/latest
+Output file of stt_ir_sku: /data/aopi/feeds_longbow/output/stt_ir_sku/latest
+Access U Drive: smb://application/apps_d/
+
+Query Mongo pt_ir_sku:
+db.pt_ir_sku.find({"description":/"/}).limit(2).pretty();
+db.pt_ir_sku.find().count();
+
+"brand" : "Bentley",
+"SKU" : "W0133-1623528",
+
+Check: pt_ir_sku on tuesday July 25, 2016
+
+-------------------------------------------------------------------
+=======================================================================================================
+-------------------------------------------------------------------
+Date: 2016-07-26
+
+Output file of dam sku: /var/www/html/feeds_zf2feeds_production/data/output/
+/data/aopi/feeds_longbow/output/dam_ci_sku/latest
+
+----------------------------
+Dam SKU:
+All => select count(*) from master_template where part='Mirror' and brand ='Kool Vue';
+Result: 13873
+Non Zero (404) => select count(*) from master_template where part='Mirror' and brand ='Kool Vue' and parent_product_id > 0;
+Result: 0
+Zero => select count(*) from master_template where part='Mirror' and brand ='Kool Vue' and parent_product_id = 0;
+Result: 13873
+----------------------------
+Dam Details:
+select count(*) from master_template where part='Mirror' and brand='Kool Vue' and universal = '0' 
+Result: 13872
+select count(*) from master_template where part='Mirror' and brand='Kool Vue' and universal = '0' and parent_product_id > 0;
+Result: 0
+select count(*) from master_template where part='Mirror' and brand='Kool Vue' and universal = '0' and parent_product_id = 0;
+Result: 13872
+----------------------------
+Dam Details1:
+select count(*) from master_template where universal = '0' and min_year>='1990' and part='Mirror' and brand ='Kool Vue';
+Result:12852
+select count(*) from master_template where universal = '0' and min_year>='1990' and part='Mirror' and brand ='Kool Vue' and parent_product_id > 0;
+Result:0
+select count(*) from master_template where universal = '0' and min_year>='1990' and part='Mirror' and brand ='Kool Vue' and parent_product_id = 0;
+Result:12852
+----------------------------
+Dam Details2:
+select count(*) from master_template where universal = '0'  and min_year>='1990' and part='Mirror' and brand ='Kool Vue' and part_number NOT LIKE '%-PLK%';
+Result:8684
+select count(*) from master_template where universal = '0'  and min_year>='1990' and part='Mirror' and brand ='Kool Vue' and part_number NOT LIKE '%-PLK%' and parent_product_id > 0;
+Result:0
+select count(*) from master_template where universal = '0'  and min_year>='1990' and part='Mirror' and brand ='Kool Vue' and part_number NOT LIKE '%-PLK%' and parent_product_id = 0;
+Result:8684
+----------------------------
+Dcc Details:
+select count(*) from master_template where ebay = '0' AND brand NOT LIKE '%AutoTrust%' AND (part NOT LIKE '%repair manual%') AND (part NOT LIKE '%book%') AND (part = 'catalytic converter' OR part = 'exhaust system' OR part = 'muffler' OR part = 'exhaust manifold' OR part = 'exhaust tip' OR part = 'exhaust pipe' OR part = 'header pipe' OR part = 'exhaust gasket' OR part = 'tail pipe') AND brand_id = 1047;
+Result:1001
+select count(*) from master_template where ebay = '0' AND brand NOT LIKE '%AutoTrust%' AND (part NOT LIKE '%repair manual%') AND (part NOT LIKE '%book%') AND (part = 'catalytic converter' OR part = 'exhaust system' OR part = 'muffler' OR part = 'exhaust manifold' OR part = 'exhaust tip' OR part = 'exhaust pipe' OR part = 'header pipe' OR part = 'exhaust gasket' OR part = 'tail pipe') AND brand_id = 1047 and parent_product_id > 0;
+Result:0
+select count(*) from master_template where ebay = '0' AND brand NOT LIKE '%AutoTrust%' AND (part NOT LIKE '%repair manual%') AND (part NOT LIKE '%book%') AND (part = 'catalytic converter' OR part = 'exhaust system' OR part = 'muffler' OR part = 'exhaust manifold' OR part = 'exhaust tip' OR part = 'exhaust pipe' OR part = 'header pipe' OR part = 'exhaust gasket' OR part = 'tail pipe') AND brand_id = 1047 and parent_product_id = 0;
+Result:1001
+----------------------------
+Dar Details: 
+select count(*) from master_template where universal = 0 and old_cat_name IN ('Cooling System','Climate Control');
+Result:673522
+select count(*) from master_template where universal = 0 and old_cat_name IN ('Cooling System','Climate Control') and parent_product_id > 0;
+Result:18869
+select count(*) from master_template where universal = 0 and old_cat_name IN ('Cooling System','Climate Control') and parent_product_id = 0;
+Result:654653
+
+select count(*) from master_template where universal = 0 and (old_cat_name = 'Cooling System' or old_cat_name = 'Climate Control');
+select count(*) from master_template where universal = 0 and (old_cat_name = 'Cooling System' or old_cat_name = 'Climate Control') and parent_product_id > 0;
+----------------------------
+Dar SKU: 
+select count(*) from master_template where old_cat_name IN ('Cooling System','Climate Control')
+Result: 674036
+select count(*) from master_template where old_cat_name IN ('Cooling System','Climate Control') and parent_product_id > 0;
+Result: 18869
+select count(*) from master_template where old_cat_name IN ('Cooling System','Climate Control') and parent_product_id = 0;
+Result: 655167
+----------------------------
+Des SKU:
+select count(*) from master_template where old_cat_name = 'Exhaust';
+Result:413064
+select count(*) from master_template where old_cat_name = 'Exhaust' and parent_product_id > 0;
+Result:20713
+select count(*) from master_template where old_cat_name = 'Exhaust' and parent_product_id = 0;
+Result:392351
+----------------------------
+Des Details:
+select count(*) from master_template where universal = 0 and old_cat_name = 'Exhaust' and parent_product_id = 0;
+
+-------------------------------------------------------------------
+=======================================================================================================
+-------------------------------------------------------------------
+
+Pending: Check PT IR SKU replace double qoute
+
+
+-------------------------------------------------------------------
+=======================================================================================================
+-------------------------------------------------------------------
+Dated: Jul 31, 2016
+
+php generate.php -abuildCI -tapw_pla_google
+
+Task:
+Investigate APW Details why is not running.
+
+U Drive: smb://application/apps_d/Affiliate/IR
+
+DCMS:
+/data/www/html/svn-exports/services/tools_team/Coupon2-CURRENT/v2d2
+
+672155
+
+
+-------------------------------------------------------------------
+=======================================================================================================
+-------------------------------------------------------------------
+Dated: Aug 6, 2016
+Dam Details
+Line: 420
+foreach($exp as $ky => $value){
+    if(trim($value) != ""){
+        if(count($tmpChars) == 0){
+            $tmpChars[0] = $value;
+        }else{
+            if($ky == (count($exp) -1) && count($exp) > 2){
+                break;
+            }else{
+                $tmpChars[0] = $tmpChars[1];
+                $tmpChars[1] = $value;
+            }
+        }
+    }
+}

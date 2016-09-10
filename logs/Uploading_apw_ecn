@@ -1,0 +1,89 @@
+[masturiano@ip-10-166-47-131 latest]$ cat upload_apw_ecn2.log
+APW ECN Upload
+Start:  Tue Aug 2 20:07:34 EDT 2016
+Connected to ftp.ebaycommercenetwork.com (74.120.180.135).
+220 Ebay Commerce Network FTP server ready
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for m403386
+230 User m403386 logged in
+Interactive mode off.
+200 Type set to I
+local: APWECN1.txt remote: APWECN1.txt
+227 Entering Passive Mode (74,120,180,135,52,136).
+150 Opening BINARY mode data connection for APWECN1.txt
+226 Transfer complete
+1359651721 bytes sent in 883 secs (1539.12 Kbytes/sec)
+local: APWECN10.txt remote: APWECN10.txt
+227 Entering Passive Mode (74,120,180,135,53,189).
+150 Opening BINARY mode data connection for APWECN10.txt
+226 Transfer complete
+1329630577 bytes sent in 855 secs (1554.63 Kbytes/sec)
+local: APWECN11.txt remote: APWECN11.txt
+227 Entering Passive Mode (74,120,180,135,54,149).
+150 Opening BINARY mode data connection for APWECN11.txt
+226 Transfer complete
+1315810738 bytes sent in 849 secs (1549.48 Kbytes/sec)
+local: APWECN12.txt remote: APWECN12.txt
+227 Entering Passive Mode (74,120,180,135,55,30).
+150 Opening BINARY mode data connection for APWECN12.txt
+226 Transfer complete
+680475899 bytes sent in 433 secs (1571.73 Kbytes/sec)
+local: APWECN2.txt remote: APWECN2.txt
+227 Entering Passive Mode (74,120,180,135,55,59).
+150 Opening BINARY mode data connection for APWECN2.txt
+226 Transfer complete
+1367062090 bytes sent in 876 secs (1561.12 Kbytes/sec)
+local: APWECN3.txt remote: APWECN3.txt
+227 Entering Passive Mode (74,120,180,135,55,135).
+150 Opening BINARY mode data connection for APWECN3.txt
+226 Transfer complete
+1364202168 bytes sent in 852 secs (1601.44 Kbytes/sec)
+local: APWECN4.txt remote: APWECN4.txt
+227 Entering Passive Mode (74,120,180,135,56,6).
+150 Opening BINARY mode data connection for APWECN4.txt
+226 Transfer complete
+1360840996 bytes sent in 862 secs (1578.81 Kbytes/sec)
+local: APWECN5.txt remote: APWECN5.txt
+227 Entering Passive Mode (74,120,180,135,56,11).
+150 Opening BINARY mode data connection for APWECN5.txt
+226 Transfer complete
+1352209323 bytes sent in 884 secs (1528.86 Kbytes/sec)
+local: APWECN6.txt remote: APWECN6.txt
+227 Entering Passive Mode (74,120,180,135,56,72).
+150 Opening BINARY mode data connection for APWECN6.txt
+226 Transfer complete
+1323727866 bytes sent in 868 secs (1524.67 Kbytes/sec)
+local: APWECN7.txt remote: APWECN7.txt
+227 Entering Passive Mode (74,120,180,135,56,144).
+150 Opening BINARY mode data connection for APWECN7.txt
+226 Transfer complete
+1339239835 bytes sent in 844 secs (1587.70 Kbytes/sec)
+local: APWECN8.txt remote: APWECN8.txt
+227 Entering Passive Mode (74,120,180,135,56,255).
+150 Opening BINARY mode data connection for APWECN8.txt
+226 Transfer complete
+1336524876 bytes sent in 920 secs (1452.31 Kbytes/sec)
+local: APWECN9.txt remote: APWECN9.txt
+227 Entering Passive Mode (74,120,180,135,57,63).
+150 Opening BINARY mode data connection for APWECN9.txt
+226 Transfer complete
+1332272532 bytes sent in 900 secs (1480.84 Kbytes/sec)
+227 Entering Passive Mode (74,120,180,135,57,205).
+150 Opening ASCII mode data connection for file list
+-rwxrwxrwx   1 m403386  65534    1359651721 Aug  3 00:22 APWECN1.txt
+-rwxrwxrwx   1 m403386  65534    1329630577 Aug  3 00:36 APWECN10.txt
+-rw-r--r--   1 m403386  65533    1315810738 Aug  3 00:50 APWECN11.txt
+-rw-r--r--   1 m403386  65533    680475899 Aug  3 00:58 APWECN12.txt
+-rwxrwxrwx   1 m403386  65534    1367062090 Aug  3 01:12 APWECN2.txt
+-rwxrwxrwx   1 m403386  65534    1364202168 Aug  3 01:26 APWECN3.txt
+-rwxrwxrwx   1 m403386  65534    1360840996 Aug  3 01:41 APWECN4.txt
+-rwxrwxrwx   1 m403386  65534    1352209323 Aug  3 01:56 APWECN5.txt
+-rwxrwxrwx   1 m403386  65534    1323727866 Aug  3 02:10 APWECN6.txt
+-rwxrwxrwx   1 m403386  65534    1339239835 Aug  3 02:24 APWECN7.txt
+-rwxrwxrwx   1 m403386  65534    1336524876 Aug  3 02:40 APWECN8.txt
+-rwxrwxrwx   1 m403386  65534    1332272532 Aug  3 02:55 APWECN9.txt
+drwxrwxrwx   2 m403386  65534      122880 Aug  3 02:26 feedreport
+drwxrwxrwx   2 m403386  65534        8192 Apr  4 12:10 plr
+226 Transfer complete
+221 Goodbye.

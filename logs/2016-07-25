@@ -1,0 +1,304 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+JCW_DETAILS JCW_SKU
+
+=========================================================================================================
+UPLOADING JCW_DETAILS
+-rw-r--r-- 1 root root 3.4G Jul 25 10:05 jcw_froogle1.txt
+-rw-r--r-- 1 root root 3.5G Jul 25 10:10 jcw_froogle2.txt
+-rw-r--r-- 1 root root 3.0G Jul 25 10:16 jcw_froogle3.txt
+-rw-r--r-- 1 root root 596M Jul 25 10:21 compressed_jcw_feed.zip
+-rw-r--r-- 1 root root 248M Jul 25 10:06 jcw_froogle1.zip
+-rw-r--r-- 1 root root 183M Jul 25 10:11 jcw_froogle2.zip
+-rw-r--r-- 1 root root 166M Jul 25 10:17 jcw_froogle3.zip
+3.4G	jcw_froogle1.txt
+3.5G	jcw_froogle2.txt
+3.0G	jcw_froogle3.txt
+JCW Details CI Upload
+Start:  Mon Jul 25 18:12:30 PDT 2016
+Connected to feeds.channelintelligence.com (70.32.148.173).
+220-Welcome to Channel Intelligence Feeds FTP Server
+220 FTP Server ready.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for autopartswarehouseus
+230 User autopartswarehouseus logged in
+Interactive mode off.
+200 Type set to I
+local: jcw_froogle1.zip remote: jcw_froogle1.zip
+227 Entering Passive Mode (70,32,148,173,241,94).
+150 Opening BINARY mode data connection for jcw_froogle1.zip
+226 Transfer complete
+259144638 bytes sent in 4.37 secs (59270.87 Kbytes/sec)
+local: jcw_froogle2.zip remote: jcw_froogle2.zip
+227 Entering Passive Mode (70,32,148,173,255,37).
+150 Opening BINARY mode data connection for jcw_froogle2.zip
+226 Transfer complete
+190965748 bytes sent in 3.79 secs (50367.47 Kbytes/sec)
+local: jcw_froogle3.zip remote: jcw_froogle3.zip
+227 Entering Passive Mode (70,32,148,173,251,161).
+150 Opening BINARY mode data connection for jcw_froogle3.zip
+226 Transfer complete
+173838190 bytes sent in 3.61 secs (48219.27 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 18:12:49 PDT 2016
+upload_ci.sh: line 19: /root: is a directory
+=================================================================================
+UPLOADING JCW_SKU
+-rw-r--r-- 1 root root 1.3G Jul 25 08:27 jcw_froogle4.txt
+-rw-r--r-- 1 root root 111M Jul 25 08:27 jcw_froogle4.zip
+1.3G	jcw_froogle4.txt
+JCW SKU CI Upload
+Start:  Mon Jul 25 18:12:49 PDT 2016
+Connected to feeds.channelintelligence.com (70.32.148.173).
+220-Welcome to Channel Intelligence Feeds FTP Server
+220 FTP Server ready.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for autopartswarehouseus
+230 User autopartswarehouseus logged in
+Interactive mode off.
+200 Type set to I
+local: jcw_froogle4.zip remote: jcw_froogle4.zip
+227 Entering Passive Mode (70,32,148,173,247,206).
+150 Opening BINARY mode data connection for jcw_froogle4.zip
+226 Transfer complete
+115938359 bytes sent in 2.84 secs (40845.43 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 18:12:54 PDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadCIFeeds.sh 
+JCW_DETAILS JCW_SKU
+
+=========================================================================================================
+UPLOADING JCW_DETAILS
+-rw-r--r-- 1 root root 3.4G Jul 25 10:05 jcw_froogle1.txt
+-rw-r--r-- 1 root root 3.5G Jul 25 10:10 jcw_froogle2.txt
+-rw-r--r-- 1 root root 3.0G Jul 25 10:16 jcw_froogle3.txt
+-rw-r--r-- 1 root root 596M Jul 25 10:21 compressed_jcw_feed.zip
+-rw-r--r-- 1 root root 248M Jul 25 10:06 jcw_froogle1.zip
+-rw-r--r-- 1 root root 183M Jul 25 10:11 jcw_froogle2.zip
+-rw-r--r-- 1 root root 166M Jul 25 10:17 jcw_froogle3.zip
+3.4G	jcw_froogle1.txt
+3.5G	jcw_froogle2.txt
+3.0G	jcw_froogle3.txt
+JCW Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+Warning: Permanently added the RSA host key for IP address '[64.233.167.130]:19321' to the list of known hosts.
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle1.zip to /jcw_froogle1.zip
+Uploading jcw_froogle2.zip to /jcw_froogle2.zip
+Uploading jcw_froogle3.zip to /jcw_froogle3.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING JCW_SKU
+-rw-r--r-- 1 root root 1.3G Jul 25 08:27 jcw_froogle4.txt
+-rw-r--r-- 1 root root 111M Jul 25 08:27 jcw_froogle4.zip
+1.3G	jcw_froogle4.txt
+JCW SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle4.zip to /jcw_froogle4.zip
+sftp> quit
+End :  date
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN04
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh
+DAR_SKU DBK_SKU DES_DETAILS DAR_DETAILS APW_DETAILS DBK_DETAILS
+
+=========================================================================================================
+UPLOADING DAR_SKU
+-rw-r--r-- 1 root root 2.7M Jul 25 01:27 dar_sku.txt
+-rw-r--r-- 1 root root 832K Jul 25 01:27 dar_sku.zip
+2.7M	dar_sku.txt
+DAR SKU upload
+Start:  Mon Jul 25 21:25:10 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730413.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dar_sku.txt remote: dar_sku.txt
+227 Entering Passive Mode (108,170,217,160,8,233)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+2807315 bytes sent in 1.21 secs (2313.37 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:25:12 EDT 2016
+PLEASE SEND THE LOGS
+==================================================================================
+UPLOADING DBK_SKU
+-rw-r--r-- 1 root root 5.1M Jul 25 02:46 dbk_sku.txt
+-rw-r--r-- 1 root root 1.5M Jul 25 02:46 dbk_sku.zip
+5.1M	dbk_sku.txt
+DBK SKU upload
+Start:  Mon Jul 25 21:25:37 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730419.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dbk_sku.txt remote: dbk_sku.txt
+227 Entering Passive Mode (108,170,217,160,37,219)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+5286616 bytes sent in 1.42 secs (3718.44 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:25:39 EDT 2016
+==================================================================================
+UPLOADING DES_DETAILS
+-rw-r--r-- 1 root root 22M Jul 25 08:16 des_details.txt
+-rw-r--r-- 1 root root 862K Jul 25 08:16 des_details.zip
+22M	des_details.txt
+DES SKU upload
+Start:  Mon Jul 25 21:25:39 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111739022.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: des_details.txt remote: des_details.txt
+227 Entering Passive Mode (108,170,217,160,35,227)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+22477667 bytes sent in 4.79 secs (4693.42 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:25:45 EDT 2016
+upload.sh: line 19: /root: is a directory
+PLEASE SEND THE LOGS
+==================================================================================
+UPLOADING DAR_DETAILS
+-rw-r--r-- 1 root root 20M Jul 25 21:34 dar_details.txt
+-rw-r--r-- 1 root root 819K Jul 25 21:34 dar_details.zip
+20M	dar_details.txt
+DAR SKU upload
+Start:  Mon Jul 25 21:37:13 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730413.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dar_details.txt remote: dar_details.txt
+227 Entering Passive Mode (108,170,217,160,8,192)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+20323499 bytes sent in 2.32 secs (8768.27 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:37:16 EDT 2016
+PLEASE SEND THE LOGS
+==================================================================================
+UPLOADING APW_DETAILS
+-rw-r--r-- 1 root root 3.7G Jul 25 18:26 base_apw_1.txt
+-rw-r--r-- 1 root root 2.6G Jul 25 18:32 base_apw_2.txt
+-rw-r--r-- 1 root root 2.8G Jul 25 18:39 base_apw_3.txt
+-rw-r--r-- 1 root root 2.7G Jul 25 18:46 base_apw_4.txt
+-rw-r--r-- 1 root root 2.7G Jul 25 18:56 base_apw_5.txt
+-rw-r--r-- 1 root root 2.7G Jul 25 19:07 base_apw_6.txt
+-rw-r--r-- 1 root root 2.8G Jul 25 19:19 base_apw_8.txt
+-rw-r--r-- 1 root root 713M Jul 25 19:32 apw_20160726.zip
+-rw-r--r-- 1 root root 146M Jul 25 19:22 base_apw_1.zip
+-rw-r--r-- 1 root root 106M Jul 25 19:23 base_apw_2.zip
+-rw-r--r-- 1 root root 108M Jul 25 19:25 base_apw_3.zip
+-rw-r--r-- 1 root root 104M Jul 25 19:26 base_apw_4.zip
+-rw-r--r-- 1 root root 102M Jul 25 19:28 base_apw_5.zip
+-rw-r--r-- 1 root root 104M Jul 25 19:30 base_apw_6.zip
+-rw-r--r-- 1 root root  92M Jul 25 19:31 base_apw_8.zip
+3.7G	base_apw_1.txt
+2.6G	base_apw_2.txt
+2.8G	base_apw_3.txt
+2.7G	base_apw_4.txt
+2.7G	base_apw_5.txt
+2.7G	base_apw_6.txt
+2.8G	base_apw_8.txt
+APW Details CI Upload
+Start:  Mon Jul 25 21:40:05 EDT 2016
+Connected to feeds.channelintelligence.com (70.32.148.173).
+220-Welcome to Channel Intelligence Feeds FTP Server
+220 FTP Server ready.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for autopartswarehouseus
+230 User autopartswarehouseus logged in
+Interactive mode off.
+200 Type set to I
+local: base_apw_1.zip remote: base_apw_1.zip
+227 Entering Passive Mode (70,32,148,173,239,31).
+150 Opening BINARY mode data connection for base_apw_1.zip
+226 Transfer complete
+152925446 bytes sent in 6.47 secs (23631.97 Kbytes/sec)
+local: base_apw_2.zip remote: base_apw_2.zip
+227 Entering Passive Mode (70,32,148,173,237,190).
+150 Opening BINARY mode data connection for base_apw_2.zip
+226 Transfer complete
+110385597 bytes sent in 5.41 secs (20405.56 Kbytes/sec)
+local: base_apw_3.zip remote: base_apw_3.zip
+227 Entering Passive Mode (70,32,148,173,246,189).
+150 Opening BINARY mode data connection for base_apw_3.zip
+226 Transfer complete
+112416000 bytes sent in 4.74 secs (23697.67 Kbytes/sec)
+local: base_apw_4.zip remote: base_apw_4.zip
+227 Entering Passive Mode (70,32,148,173,238,125).
+150 Opening BINARY mode data connection for base_apw_4.zip
+226 Transfer complete
+108747765 bytes sent in 5.71 secs (19048.87 Kbytes/sec)
+local: base_apw_5.zip remote: base_apw_5.zip
+227 Entering Passive Mode (70,32,148,173,235,181).
+150 Opening BINARY mode data connection for base_apw_5.zip
+226 Transfer complete
+106817498 bytes sent in 5.12 secs (20879.05 Kbytes/sec)
+local: base_apw_6.zip remote: base_apw_6.zip
+227 Entering Passive Mode (70,32,148,173,249,192).
+150 Opening BINARY mode data connection for base_apw_6.zip
+226 Transfer complete
+108625651 bytes sent in 4.52 secs (24035.89 Kbytes/sec)
+local: base_apw_8.zip remote: base_apw_8.zip
+227 Entering Passive Mode (70,32,148,173,240,1).
+150 Opening BINARY mode data connection for base_apw_8.zip
+226 Transfer complete
+96104819 bytes sent in 3.24 secs (29623.92 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:40:49 EDT 2016
+PLEASE SEND THE LOGS
+==================================================================================
+UPLOADING DBK_DETAILS
+-rw-r--r-- 1 root root 25M Jul 25 21:45 dbk_details.txt
+-rw-r--r-- 1 root root 809K Jul 25 21:45 dbk_details.zip
+25M	dbk_details.txt
+DBK SKU upload
+Start:  Mon Jul 25 21:56:04 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730419.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dbk_details.txt remote: dbk_details.txt
+227 Entering Passive Mode (108,170,217,160,26,127)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+25961723 bytes sent in 2.36 secs (11016.33 Kbytes/sec)
+221 Goodbye.
+End :  Mon Jul 25 21:56:07 EDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN07
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh
+APW_CJ CP_CJ PT_CJ CP_ECN
+
+=========================================================================================================
+

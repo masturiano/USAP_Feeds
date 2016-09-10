@@ -1,0 +1,15 @@
+
+Mark Glenn Pedrasa
+2:04 AM php scripts/curl_live_brands.php [account]
+2:07 var/www/html/feeds_zf2seattle_staging/workers
+Mark Glenn Pedrasa
+2:13 AM mongo CSSOA09:27017
+MongoDB shell version: 3.2.8
+connecting to: CSSOA09:27017/test
+hydra-ng-prod:SECONDARY> use datahub
+switched to db datahub
+hydra-ng-prod:SECONDARY> rs.slaveOk()
+hydra-ng-prod:SECONDARY> db.products.findOne()
+2:14 http://refapp.usautoparts.com/
+Mark Glenn Pedrasa
+2:40 AM sudo crontab -e

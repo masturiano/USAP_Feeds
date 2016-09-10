@@ -1,0 +1,1461 @@
+<?php
+
+return array(
+    'dam_ci_details1' => array(
+        'insert' => array(
+            'source' => array(
+                array(
+                    'query' => array(
+                        'class' => "SqlSource",
+                        'type' => "db_localhost",
+                        'table' => "master_template",
+                        'limit' => 1000, //how many per loop
+                        'maxlimit' => "",
+                        'fields' => "master_template.*",
+                        //'where' => "universal = '0' and brand IN('Replacement','Kool Vue','Perfect Fit','US Auto Parts','Eibach','Belltech') and ebay = 0",
+                        'where' => "universal = '0' and min_year>='1990' and part='Mirror' and brand ='Kool Vue'",
+                    ),
+                    'subquery' => array(
+                        'query' => "select",
+                        'table' => "YMMSE",
+                        'fields' => "engine,submodel",
+                        //'limit' => 1,
+                        'limit' => '',
+                        'where' => function($row) {
+                            return "WHERE make = '{$row['make_name']}' AND model='{$row['model_name']}'";
+                        }//function
+                    ),          
+                    /*'Taxonomy' => array(
+                        'file' => dirname(__DIR__)."/../../data/input/dbp_pla/dbp_pla_taxonomy.txt",
+                        'delimiter' => "|"
+                    ),*/
+                    /*'multiplyRecord' => array(
+                        'by' => 'years',
+                        'delimiter' => "|",
+                        'field' => 'year',
+                        'min' => 'min_year',
+                        'max' => 'max_year',
+                        'subquery' => array(
+                            'query' => "select",
+                            'table' => "YMMSE",
+                            'fields' => "engine,submodel",
+                            'limit' => 1,
+                            'where' => function($row) {
+                                return "WHERE make = '{$row['make_name']}' AND model='{$row['model_name']}' AND year ='{$row['year']}'";
+                            }//function
+                        ),
+                        //'subquerydelimiter' => ','
+                    ),*/
+                    /*'multiplyByKeywordModel' => array(
+                        'query' => "select",
+                        'table' => "vehiclekeywords",
+                        'fields' => "keyword_model",
+                        'limit' => 1,
+                        'where' => function($row) {
+                            return "WHERE make = '{$row['make_name']}' and aces_model='{$row['model_name']}' and keyword_model!='{$row['model_name']}'";
+                        }//function
+                    ),*/
+                    'destination' => array(
+                        'drop_table' => '0', //1=YES;0=NO
+                        'is_exist' => '1', //1=YES;0=NO set to 1 to preserve first data of index
+                        'collection' => "dam_ci_details",
+                        'where' => function($result) {
+                            return array('id' => $result['id']);
+                        },
+                        'indeces' => array(
+                            'id'
+                        )
+                    ),
+                    'qualifiers' => array(
+                        "finish","location","operation","color/finish","material","type","quantitysold","warranty","heated","folding","productfit","fitnote","location","dimension","heated","bulbincluded","design","emissions","series",
+                    )
+                    /*'exclusions' => array(
+                        'dupsaddchar' => array(
+                            'sku' => array(
+                                    'position' => 'last', //character position - last or first
+                                    'addchar' => 'Q' //additional character to remove
+                            )
+                        )
+                    ) //end exclusions*/
+                )
+            ),
+            'ruleset' => array(
+              //  "DerivePattern", "SetValue", "Taxonomy"
+                "DerivePattern", "SetValue"
+            ),
+            'rules' => array(
+                'DerivePattern' => array(
+                    'id' => array(
+						//'format' => "dam[minyy][maxyy][make_name][model_name][brand][part][engine][submodel][min_year][max_year][part_number][fnotes_id]",
+						'format' => "dam[minyy][maxyy][make_name][model_name][brand][part][submodel][min_year][max_year][part_number][fnotes_id]",
+						'fields' => array(
+							'minyy' => array(
+								'function' => array(
+                                    function($row) {
+										return substr($row['min_year'],2,4);
+                                    }
+                                )
+							),
+							'maxyy' => array(
+								'function' => array(
+                                    function($row) {
+										return substr($row['max_year'],2,4);
+                                    }
+                                )
+							),
+							'make_name' => array(
+								'function' => array(
+									function($row){
+										$make_name = explode(' ',$row['make_name']);
+										$mname = '';
+										foreach($make_name as $make){
+											$mname .= substr($make,0,2).substr($make, -1);
+										}
+										return strtolower($mname);
+									}
+								)
+							),
+							'model_name' => array(
+								'function' => array(
+									function($row){
+										$model_name = explode(' ',$row['model_name']);
+										$mname = '';
+										foreach($model_name as $model){
+											$mname .= substr($model,0,2).substr($model, -1);
+										}
+										return strtolower($mname);
+									}
+								)
+							),
+							'brand' => array(
+								'function' => array(
+									function($row){
+										return strtolower(substr($row['brand'], -1));
+									}
+								)
+							),
+							'part' => array(
+								'function' => array(
+									function($row){
+										return strtolower(substr($row['part'], -1));
+									}
+								)
+							),
+							/*'engine' => array(
+								'function' => array(
+									function($row){
+										$engine_data = isset($row['engine']) ? $row['engine'] : '';
+										$engine = explode(' ',$engine_data);
+										$ename = '';
+										foreach($engine as $eng){
+											$ename .= substr($eng,0,2).substr($eng, -1);
+										}
+										return $ename;
+									}
+								)
+							),*/
+							'submodel' => array(
+								'function' => array(
+									function($row){
+										$submodel_data = isset($row['submodel']) ? $row['submodel'] : '';
+										$submodel = explode(' ',$submodel_data);
+										$sname = '';
+										foreach($submodel as $sub){
+											$sname .= substr($sub,0,2).substr($sub, -1);
+										}
+										return strtolower($sname);
+									}
+								)
+							),
+							'min_year' => array(
+								'function' => array(
+									function($row){
+										return substr($row['min_year'],2,4);
+									}
+								)
+							),
+							'max_year' => array(
+								'function' => array(
+									function($row){
+										return substr($row['max_year'],2,4);
+									}
+								)
+							),
+							'part_number',
+							'fnotes_id' => array(
+								'function' => array(
+									function($row){
+										$fnotes = explode(strtolower($row['part_number']), $row['uid']);
+                    					$fnotesId = isset($fnotes[1]) ? $fnotes[1] : "";
+                    					return strtolower($fnotesId);
+									}
+								)
+							)
+                        )
+					),
+                    'c:location' => array(
+                        'format' => "[location]",
+                        'fields' => array(
+                        'location' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $location = "";
+                                        if(isset($row['location']) && $row['location'] != '' )
+                                                $location = $row['location'];
+                                        else if (isset($row['position']) && $row['position'] != '' )
+                                                $location = $row['position'];
+                                        $location = ($location != '') ? $location : '';
+                                        return $location;
+                                    },
+                                ),
+                            )
+                        )
+                    ),
+                    'c:part_location:string' => array(
+                    'format' => "[location]",
+                        'fields' => array(
+                            'location' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $location = "";
+                                        if(isset($row['location']) && $row['location'] != '' )
+                                            $location = $row['location'];
+                                        else if (isset($row['position']) && $row['position'] != '' )
+                                            $location = $row['position'];
+                                            $location = ($location != '') ? $location : '';
+                                        return $location;
+                                    },  
+                                ),              
+                            )           
+                        )
+                    ),
+                    'google_product_category' => array(
+                        'format' => "[cog]",
+                        'fields' => array(
+                            'cog' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $google_product_category_position = explode(",", $row['position']);
+                                        $google_product_category = "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Parts > Motor Vehicle Mirrors";
+                                        if(count($google_product_category_position)>1){
+                                            $google_product_category = "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Parts > Motor Vehicle Mirrors";
+                                        }else{
+                                            if(stripos($google_product_category_position[0],"side") !== false){
+                                                $google_product_category = "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Parts > Motor Vehicle Mirrors > Vehicle Side-View Mirrors";
+                                            }elseif(stripos($google_product_category_position[0],"towing") !== false){
+                                                $google_product_category = "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Parts > Motor Vehicle Mirrors > Vehicle Towing Mirrors";
+                                            }elseif(stripos($google_product_category_position[0],"rear") !== false){
+                                                $google_product_category = "Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Parts > Motor Vehicle Mirrors > Vehicle Rear-View Mirrors";
+                                            }
+                                        }           
+                                        return $google_product_category;
+                                    },
+                                ),
+                            )
+                        )
+                    ),
+                    'title' => array(
+                        'format' => "[min_year]-[max_year] [make_name] [model_name] [part], [position], [brand] [mpn]",
+                        'fields' => array(
+                            'min_year',                                         
+                            'max_year',
+                            'make_name',
+                            'model_name',
+                            'part',
+                            'position',
+                            'brand',
+                            'mpn' => array(
+                                'function' => array(
+                                    function($row){
+                                        $damMPN = $row['display_number'];
+                                        $mpn = strlen($damMPN)<3 ? $row['part_number'] : $damMPN;
+                                        return $mpn;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'link' => array(
+                        'format' => "http://www.discountautomirrors.com/details/[make_name]/[model_name]/[brand]/[part]/[min_year]-[max_year]/[part_number].html?damid=H1250585840W4a8a6cf08b08f&fprodid=[mmddyy]",
+                        'fields' => array(
+                            'make_name',
+                            'model_name',
+                            'brand',
+                            'part',
+                            'min_year',
+                            'max_year',
+                            'part_number',
+                            'mmddyy' => array(
+                                'function' => array(
+                                    function($row){
+                                        return date('mdy');
+                                    }
+                                )
+                            )
+                        ),
+                        'function'  => array(
+                            function($str) {        
+                                return str_replace(' ', '_', $str);                                    
+                            }                        
+                        )
+                    ),
+                    'adwords_redirect' => array(
+                        'format' => "http://www.discountautomirrors.com/details/[make_name]/[model_name]/[brand]/[part]/[min_year]-[max_year]/[part_number].html?damcid=productads&fprodid=[mmddyy]",
+                        'fields' => array(
+                            'make_name',
+                            'model_name',
+                            'brand',
+                            'part',
+                            'min_year',
+                            'max_year',
+                            'part_number',
+                            'mmddyy' => array(
+                                'function' => array(
+                                    function($row){
+                                        return date('mdy');
+                                    }
+                                )
+                            )
+                        ),
+                        'function'  => array(
+                            function($str) {        
+                                return str_replace(' ', '_', $str);                                    
+                            }                        
+                        )
+                    ),
+                    'price' => array(
+                        'format' => "[price3]",
+                        'fields' => array(
+                            "price3" 
+                        ),
+                        'function'  => array(
+                            function($str) {
+                                return $str." USD";
+                            }
+                        )
+
+                    ),
+                    'brand' => array(
+                        'format' => "[brand]",
+                        'fields' => array(
+                            "brand"
+                        )
+                    ),
+                    'c:vehicle_engine:string' => array(
+                        'format' => "[c_vehicle_engine_string]",
+                        'fields' => array(
+                             'c_vehicle_engine_string' => array(
+                                'function' => array(
+                                    function($row){
+                                        $engine_data = isset($row['engine']) ? $row['engine'] : '';
+                                        if($engine_data == '')
+                                            return '';
+                                            $engine = explode(' ',$engine_data);
+                                        return $engine[0];
+                                    }
+                                )
+                            ),
+                        )
+                    ),
+                    'Submodel' => array(
+                        'format' => "[c_vehicle_model_string]",
+                        'fields' => array(
+                            'c_vehicle_model_string' => array(
+                                'function' => array(
+                                    function($row){
+                                        $engine_data = isset($row['submodel']) ? $row['submodel'] : '';
+                                        if($engine_data == '')
+                                            return '';
+                                            $engine = explode(' ',$engine_data);
+                                        return $engine[0];
+                                        //return isset($row['submodel']) ? $row['submodel'] : '';
+                                    }
+                                )
+                            ),
+                        )
+                    ),
+                    'c:brand:string' => array(
+                        'format' => "[brand]",
+                        'fields' => array(
+                            'brand'
+                        )
+                    ),
+                    'material' => array(
+                        'format' => "[material]",
+                        'fields' => array(
+                            'material'
+                        )
+                    ),
+                    'color' => array(
+                        'format' => "[color/finish]",
+                        'fields' => array(
+                            'color/finish'
+                        )
+                    ),
+                    'c:product_feature2:string' => array(
+                        'format' => "[notes]",
+                        'fields' => array(
+                            'notes' => array('
+                                function' => array(
+                                    function($row){
+                                        $str = $row['notes'];
+                                        $exp = explode(";",$str);
+                                        $tmpChars = array('','');
+                                        foreach($exp as $ky => $value){
+                                            if(trim($value) != ""){
+                                                if(count($tmpChars) == 0){
+                                                    $tmpChars[0] = $value;
+                                                }else{
+                                                    if($ky == (count($exp) -1) && count($exp) > 2){
+                                                        break;
+                                                    }
+                                                    else{
+                                                        $tmpChars[0] = $tmpChars[1];
+                                                        $tmpChars[1] = $value;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        $c_product_feature_string = $tmpChars;      
+                                        for($ix= 0; $ix<2; $ix++){
+                                        $tempp = explode(".",$c_product_feature_string[$ix]);
+                                        $toRet = array();
+                                        foreach($tempp as $coll){
+                                        $coll = str_replace("<p>"," ",$coll);
+                                        $coll = str_replace("</p>","",$coll);               
+                                        $toRet[] = str_replace("  "," ",ucfirst(strip_tags(str_replace(","," ",trim($coll)))));
+                                        }
+                                        $tempp = implode(". ",$toRet);
+                                        $c_product_feature_string[$ix] = $tempp;
+                                        }
+                                        return $c_product_feature_string[1];
+                                    }
+                                )
+                            ),
+                        )
+                    ),
+                    'c:warranty_notes:string' => array(
+                        'format' => "[warranty]",
+                        'fields' => array(
+                            'warranty' 
+                        )
+                    ),
+                    'shipping_weight' => array(
+                        'format' => "[shipping_weight]",
+                        'fields' => array(
+                            'shipping_weight' => array(
+                                'function' => array(
+                                    function($row){
+                                        $shipping_weight = $row["weight"];       
+                                        $shipping_weight = $shipping_weight != '' ? $shipping_weight . ' lb' : '0.00 lb';
+                                    return $shipping_weight;                                           
+                                    }
+                                )
+                            ),
+                        )
+                    ),
+                    'c:vehicle_name:string' => array(
+                        'format' => "[year] [make_name] [model_name]",
+                        'fields' => array(
+                            'year',
+                            'make_name',
+                            'model_name'
+                        )
+                    ),
+                    'c:manufacturer_category:string' => array(
+                        'format' => "[make_name] Automotive Mirror",
+                        'fields' => array(
+                            //ear',
+                            'make_name'
+                            //'model_name'
+                        )
+                    ),
+                    'SKU' => array(           
+                        'format' => "[part_number]",
+                        'fields' => array(
+                            'part_number'
+                        )                       
+                    ),
+                    'c:engine:string' => array(
+                        'format' => "[engine]",
+                        'fields' => array(
+                            'engine'
+                        )               
+                    ),     
+                    'SKU' => array(
+                        'format' => "[part_number]",
+                        'fields' => array(
+                            'part_number'
+                        )
+                    ),
+                    'c:Purchasing_Power:string' => array(
+                        'format' => "[sku_mover_type]",
+                        'fields' => array(
+                            'sku_mover_type' => array(
+                                "function" => array(
+                                    function($row){
+                                        $vehicle_make = $row['make_name'];
+                                        $vehicle_model = $row['model_name'];
+                                        if (trim(strtolower($row['sku_mover_type']))=="fast"){
+                                            $c_purchasing_power_string = "Best Seller " . $vehicle_make . " " . $vehicle_model . " Mirror";
+                                        } else {
+                                            $c_purchasing_power_string = "For sale high quality OEM " . $vehicle_make . " " . $vehicle_model . " Mirror";
+                                        }
+                                        return $c_purchasing_power_string;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'custom_label_1' => array(
+                        'format' => "[sku_mover_type]",
+                        'fields' => array(
+                            'sku_mover_type'
+                        )
+                    ),
+                    'description' => array(
+                        'format' => '[min_year]-[max_year] [make_name] [model_name] [part], [minyy]-[maxyy] [make_name] [position] [part], [brand] [part] SKU:[part_number] [part]. [minyy]-[maxyy] [make_name] [part]. The Best replacement [part] for [make_name] [model_name] with [warranty]',
+                        'fields' => array(
+                            'min_year',
+                            'max_year',
+                            'make_name',
+                            'model_name',
+                            'part',
+                            'minyy' => array(
+                                'function' => array(
+                                    function($row) {
+                                        return substr($row['min_year'],2,4);
+                                    }
+                                )
+                            ),
+                            'maxyy' => array(
+                                'function' => array(
+                                    function($row) {
+                                        return substr($row['max_year'],2,4);
+                                    }
+                                )
+                            ),
+                            'position',
+                            'brand',
+                            'part_number',
+                            'warranty'
+                        )
+                    ),
+                    'image_link' => array(
+                        //'format' => 'http://imgs.dscimg.com/is/image/Autos/[part_number]_is',
+                        'format' => "http://imgs.dscimg.com/is/image/Autos/[mpn]_is?[id]&fprodid=[mmddyy]",
+                        'fields' => array(
+                            /*
+                            'part_number' => array(
+                                'function' => array(
+                                    function($row){
+                                        return strtolower($row['part_number']);
+                                    }
+                                )
+                            ),
+                            */
+                            'mpn' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $damMPN = $row['display_number'];
+                                        $mpn = strlen($damMPN)<3?$row['part_number']:$damMPN;
+                                    return $mpn;
+                                    }
+                                )
+                            ),
+                            'id' => array(
+                                //'format' => "dam[minyy][maxyy][make_name][model_name][brand][part][engine][submodel][min_year][max_year][part_number][fnotes_id]",
+                                'format' => "dam[minyy][maxyy][make_name][model_name][brand][part][submodel][min_year][max_year][part_number][fnotes_id]",
+                                'fields' => array(
+                                    'minyy' => array(
+                                        'function' => array(
+                                            function($row) {
+                                                return substr($row['min_year'],2,4);
+                                            }
+                                        )
+                                    ),
+                                    'maxyy' => array(
+                                        'function' => array(
+                                            function($row) {
+                                                return substr($row['max_year'],2,4);
+                                            }
+                                        )
+                                    ),
+                                    'make_name' => array(
+                                        'function' => array(
+                                            function($row){
+                                                $make_name = explode(' ',$row['make_name']);
+                                                $mname = '';
+                                                foreach($make_name as $make){
+                                                    $mname .= substr($make,0,2).substr($make, -1);
+                                                }
+                                                return strtolower($mname);
+                                            }
+                                        )
+                                    ),
+                                    'model_name' => array(
+                                        'function' => array(
+                                            function($row){
+                                                $model_name = explode(' ',$row['model_name']);
+                                                $mname = '';
+                                                foreach($model_name as $model){
+                                                    $mname .= substr($model,0,2).substr($model, -1);
+                                                }
+                                                return strtolower($mname);
+                                            }
+                                        )
+                                    ),
+                                    'brand' => array(
+                                        'function' => array(
+                                            function($row){
+                                                return strtolower(substr($row['brand'], -1));
+                                            }
+                                        )
+                                    ),
+                                    'part' => array(
+                                        'function' => array(
+                                            function($row){
+                                                return strtolower(substr($row['part'], -1));
+                                            }
+                                        )
+                                    ),
+                                    /*'engine' => array(
+                                        'function' => array(
+                                            function($row){
+                                                $engine_data = isset($row['engine']) ? $row['engine'] : '';
+                                                $engine = explode(' ',$engine_data);
+                                                $ename = '';
+                                                foreach($engine as $eng){
+                                                    $ename .= substr($eng,0,2).substr($eng, -1);
+                                                }
+                                                return $ename;
+                                            }
+                                        )
+                                    ),*/
+                                    'submodel' => array(
+                                        'function' => array(
+                                            function($row){
+                                                $submodel_data = isset($row['submodel']) ? $row['submodel'] : '';
+                                                $submodel = explode(' ',$submodel_data);
+                                                $sname = '';
+                                                foreach($submodel as $sub){
+                                                    $sname .= substr($sub,0,2).substr($sub, -1);
+                                                }
+                                                return strtolower($sname);
+                                            }
+                                        )
+                                    ),
+                                    'min_year' => array(
+                                        'function' => array(
+                                            function($row){
+                                                return substr($row['min_year'],2,4);
+                                            }
+                                        )
+                                    ),
+                                    'max_year' => array(
+                                        'function' => array(
+                                            function($row){
+                                                return substr($row['max_year'],2,4);
+                                            }
+                                        )
+                                    ),
+                                    'part_number',
+                                    'fnotes_id' => array(
+                                        'function' => array(
+                                            function($row){
+                                                $fnotes = explode(strtolower($row['part_number']), $row['uid']);
+                                                $fnotesId = isset($fnotes[1]) ? $fnotes[1] : "";
+                                                return strtolower($fnotesId);
+                                            }
+                                        )
+                                    )
+                                )
+                            ),
+                            'mmddyy' => array(
+                                'function' => array(
+                                    function($row){
+                                        $fprodid = date("mdy");
+                                        return $fprodid;
+                                    }
+                                )
+                            ),
+                        )
+                    ),                 
+                    'additional_image_link' => array(
+                        'format' => 'http://imgs.dscimg.com/is/image/Autos/[part_number]_is?$thumbs_100$',
+                        'fields' => array(
+                            'part_number' => array(
+                                'function' => array(
+                                    function($row){
+                                        return strtolower($row['part_number']);
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'mpn' => array(
+                        'format' => "[mpn]",
+                        'fields' => array(
+                            'mpn' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $damMPN = $row['display_number'];
+                                        $mpn = strlen($damMPN)<3?$row['part_number']:$damMPN;
+                                    return $mpn;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'gtin' => array(
+                        'format' => "[b2b_upc]",
+                        'fields' => array(
+                            'b2b_upc' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $damGTIN = $row['b2b_upc'];
+                                        $damGTIN = strlen($damGTIN)==12?$damGTIN:"";
+                                    return $damGTIN;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'product_type' => array(
+                        'format' => "[part] > [make_name] > [model_name] > [min_year] - [max_year] > [part_number]",
+                        'fields' => array(
+                            'part',
+                            'make_name',
+                            'model_name',
+                            'min_year',
+                            'max_year',
+                            'part_number'
+                        )
+                    ),
+                    'condition' => array(
+                        'format' => "[custom_label_2]",
+                        'fields' => array(
+                            'custom_label_2' => array(
+                                'function' => array(
+                                    function($row){
+                                        $condition = "new";
+                                        if(isset($row["condition"])){
+                                            $condition = $row["condition"];
+                                            //$condition = (trim($condition) == '') ? 'new' : $condition;
+                                            $condition = (trim(strtolower($condition)) == 'remanufactured') ? 'refurbished' : $condition;
+                                        }
+                                        return $condition;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'custom_label_2' => array(
+                        'format' => "[custom_label_2]",
+                        'fields' => array(
+                            'custom_label_2' => array(
+                                'function' => array(
+                                    function($row){  
+                                        $custom_label_2 = $row['stockship_id'] == 1 ? "Drop Ship" : "Stock Ship";
+                                    return $custom_label_2;
+                                    }
+                                )
+                            )
+                        )
+                    ),
+                    'handling' => array(
+                        'format' => "[handling3]",
+                        'fields' => array(
+                            "handling3"
+                        )
+                    ),
+                    'shipping' => array(
+                        'format' => "[condition]",
+                        'fields' => array(
+                            'condition' => array(
+                                'function' => array(
+                                    function($row){
+                                        $shipping3 = $row['shipping3'];
+                                        $worldpac = $row['worldpac'];
+                                        if ($worldpac == '1') {
+                                            $shipping = (($damPrice >= '50')) ? '0.00' : '10.00';
+                                        } else {
+                                            $shipping = $shipping3;
+                                        }
+                                        $shipping = $shipping + $row['handling3'];
+                                        return $shipping;
+                                    }
+                                )
+                            )
+                        ),
+                        'function'  => array(
+                            function($str) {
+                                $val =  trim($str);
+                            return "US::Ground:".$str." USD";
+                            }
+                        )
+                    ),
+                    'Fit Note' => array(
+                        'format' => "[mnotes]",
+                        'fields' => array(
+                            'mnotes'  => array(
+                                'function' => array(
+                                    function($row){
+                                        // return stripslashes(strip_tags(trim($row["mnotes"])));//stripslashes(strip_tags(trim($row["mnotes"])));
+                                        $string =  stripslashes(strip_tags(trim($row["notes"])));//stripslashes(strip_tags(trim($row["mnotes"])));                     $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+                                        return          preg_replace( '/[^[:print:]]/', '',$string);
+                                    }, 
+                                    'strip_HTML_tags_withExemptions' => array()
+                                )
+                            )
+                        )
+                    ),
+                    /*
+                    'Brand Type' => array(
+                        'format' => "[bp]",
+                        'fields' => array(
+                            'bp' => array(
+                                'function' => array(
+                                    function($row) {
+                                 //      $price = $row['variablecost']+$row['shippingcost']+$row['estcost'];
+                                  //    return $price.' USD';
+                                $brandType = ($row['br_private_label'] == 1 || $row['br_private_label'] == true) ? 'Private Label' : 'Branded';
+                                    return $brandType;
+                                    },
+                                ),
+                            )
+                        )
+                    ),
+                    */
+                    'Brand Type' => array(
+                        'format' => "[bp]",
+                        'fields' => array(
+                            'bp' => array(
+                                'function' => array(
+                                    function($row) {
+                                    // $price = $row['variablecost']+$row['shippingcost']+$row['estcost'];
+                                    // return $price.' USD';
+                                    /*
+                                    $brandType = ($row['br_private_label'] == 1 || $row['br_private_label'] == true) ? 'Private Label' : 'Branded';
+                                    return $brandType;*/
+                                        $label =  "";
+                                        switch ($row['team_id']) {
+                                            case '10':
+                                                $label = "Private Label1";
+                                                break;
+                                            case '11':
+                                                $label = "Private Label2";
+                                                break;
+                                            case '14': 
+                                                $label = "Private Label3";
+                                                break;
+                                            case '25':
+                                                $label = "Private Label4";
+                                                break;   
+                                            default:
+                                                $label = "Branded";
+                                                break;
+                                        }
+                                        return $label;
+                                    },
+                                ),
+                            )
+                        )
+                    ),
+                    'Title LP' => array(
+                        'format' => "[tp]",
+                        'fields' => array(
+                            'tp' => array(
+                                'function' => array(
+                                    function($row) {
+                                        $title_lp = '';
+                                        if($row['universal']==1) {
+                                            $title_lp .=  "Universal-";
+                                        }
+                                        $sku_location = $row['location']!='' ? $row['location'] : $row['position'];
+                                        $title_lp .= $row['dimension'] . " " . $row['brand'] . " " . $sku_location . " " . $row['dimension'] . $row['part'] . $row['series'];
+                                        $title_lp_cpam = array();
+                                        $title_lp_cpam[] = trim($row['operation']);
+                                        $title_lp_cpam[] = trim($row['color/finish']);
+                                        $title_lp_cpam[] = trim($row['material']);
+                                        $title_lp_cpam[] = trim($row['design']);
+                                        $title_lp_cpam[] = trim($row['type']);
+                                        $title_lp_cpam[] = trim($row['heated']);
+                                        $title_lp_cpam[] = trim($row['folding']);
+                                        $title_lp_cpam[] = trim($row['bulbincluded']);
+                                        $title_lp_cpam = array_diff($title_lp_cpam, array(''));
+                                        if(count($title_lp_cpam)>0){
+                                            $title_lp .= "-" . implode(", ", $title_lp_cpam);
+                                        }
+                                        $title_lp = str_replace("  "," ",$title_lp);
+                                        $title_lp = ucwords($title_lp);
+                                        return strip_tags($title_lp);
+                                    },
+                                )
+                            )
+                        )
+                    ),
+                    'Product Details' => array(
+                        'format' => "[mnotes]",
+                        'fields' => array(
+                            'mnotes'  => array(
+                                'function' => array(
+                                    function($row){
+                                        // return stripslashes(strip_tags(trim($row["mnotes"])));//stripslashes(strip_tags(trim($row["mnotes"])));
+                                        $string =  stripslashes(strip_tags(trim($row["notes"])));//stripslashes(strip_tags(trim($row["mnotes"])));                     $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+                                        return          preg_replace( '/[^[:print:]]/', '',$string);
+                                    }, 
+                                    'strip_HTML_tags_withExemptions' => array()
+                                )
+                            )
+                        )
+                    ),
+                    'Year Min' => array(
+                        'format' => "[min_year]",
+                        'fields' => array(
+                            'min_year'
+                        )
+                    ),
+                    'Year Max' => array(
+                        'format' => "[max_year]",
+                        'fields' => array(
+                            'max_year'
+                        )
+                    ),
+                    'Emissions' => array(
+                        'format' => "[emissions]",
+                        'fields' => array(
+                            'emissions'
+                        )
+                    ),
+                    'SKU' => array(
+                        'format' => "[part_number]",
+                        'fields' => array(
+                            'part_number'
+                        )
+                    ),
+                    'Part Name' => array(
+                        'format' => "[part]",
+                        'fields' => array(
+                            'part'
+                        )
+                    ),
+                    'Operation' => array(
+                        'format' => "[operation]",
+                        'fields' => array(
+                            'operation'
+                        )
+                    ),
+                    'c:cost_of_goods_sold:decimal' => array(
+                        'format' => "[cog]",
+                        'fields' => array(
+                            'cog' => array(
+                                'function' => array(
+                                    "costOfGoodSale" => ""
+                                ),
+                                'field' => "price3"
+                            )
+                        )
+                    ),
+                    /*      
+                    'c:cost_of_goods_sold:decimal2' => array(
+                        'format' => "[cog]",
+                        'fields' => array(
+                            'cog' => array(
+                                'function' => array(
+                                    function($row) {
+                                         $price = $row['variablecost']+$row['shippingcost']+$row['estcost'];
+                                        return $price.' USD';
+                                    },
+                                ),
+                            )
+                        )
+                    ),
+                    */
+                    /*      
+                    'c:cost_of_goods_sold:decimal' => array(
+                        'format' => "[variablecost]|[shippingcost]|[estcost]",
+                        'fields' => array(
+                            'variablecost' => array(
+                                'function' => array(
+                                    function($row){
+                                        $array = array();
+                                        $team_id = 
+                                        return $row['JCW_PF_Name'];
+                                    },
+                                "cog" => array(''=>'')
+                                )
+                            ),
+                        )
+                    ),
+                    */
+                    'c:product_name:string' => array(
+                        'format' => "[min_year]-[max_year] [make_name] [model_name] [position] [part]",
+                        'fields' => array(
+                            'min_year',
+                            'max_year',
+                            'make_name',
+                            'model_name',
+                            'position',
+                            'part'
+                        )
+                    ),
+                    'Design' => array(
+                        'format' => "[design]",
+                        'fields' => array(
+                            'design'
+                        )
+                    ),
+                    'Series' => array(
+                        'format' => "[series]",
+                        'fields' => array(
+                            'series'
+                        )
+                    ),
+                    'year' => array(
+                        'format' => "[min_year]-[max_year]",
+                        'fields' => array(
+                            'min_year',
+                            'max_year'
+                        )
+                    ),
+                    'make' => array(
+                        'format' => "[make_name]",
+                        'fields' => array(
+                            'make_name'
+                        )
+                    ),
+                    'model' => array(
+                        'format' => "[model_name]",
+                        'fields' => array(
+                            'model_name'
+                        )
+                    ),
+                    'Product Fit' => array(
+                        'format' => "[productfit]",
+                        'fields' => array(
+                            'productfit'
+                        )
+                    ),
+                    'estcost' => array(
+                        'format' => "[estcost]",
+                        'fields' => array(
+                            'estcost'
+                        )
+                    ),
+                    'variablecost' => array(
+                        'format' => "[variablecost]",
+                        'fields' => array(
+                            'variablecost'
+                        )
+                    ),
+                    'shippingcost' => array(
+                        'format' => "[shippingcost]",
+                        'fields' => array(
+                            'shippingcost'
+                        )
+                    ),
+                    'team_id' => array(
+                        'format' => "[team_id]",
+                        'fields' => array(
+                            'team_id'
+                        )
+                    ),
+                    'Category' => array(
+                        'format' => "[categories]",
+                        'fields' => array(
+                            'categories'
+                        )
+                    ),
+                    'Subcategory' => array(
+                        'format' => "[wpn_cat_name]",
+                        'fields' => array(
+                            'wpn_cat_name'
+                        )
+                    )
+                ), //end DerivePattern
+
+                'SetValue' => array(
+                    'Tax' => "US:CA:8.25:y",
+                    'custom_label_0' => "",
+                    'online_only' => "y", 
+                    'adwords_labels' => "",
+                    'Old ID' => "",
+                    'Feeds Category'=>'PLA Range',
+                    //'c:product_material:string' => "",
+                    'c:online_purchase_payment:string' => "Visa - Master Card - American Express - Discover Novus",
+                    // 'payment_notes' => "Google Checkout and PayPal also accepted.",
+                    // 'c_titles' => "",
+                    // 'deparment' => "",
+                    //   'custom_label_2' => "",
+                    'custom_label_3' => "",
+                    // 'adwords_publish' => "",
+                    'availability' => "in stock",
+                    // 'Submodel' => "",
+                    'Sales' => "No",
+                    'adwords_grouping'=> "",
+                    //  'pattern' => "",
+                    'c:mirror_warranty:string' => "90-days Warranty from DiscountAutoMirrors guarantees all products to be free from faults in workmanship and material for as long as the retail buyer owns the vehicle"
+                ), //end SetValue,
+
+                /*
+                'Taxonomy' => array(
+                    'adwords_grouping' => array(
+                        'field' => "mpn",
+                        'default' => "",
+                    )
+                ),
+                */ //end Taxonomy
+            ), //end rules
+        ), //end insert
+
+        'update' => array(
+            'dam_sales' => array(
+                'source' => array(
+                    'file' => "/var/www/html/feeds_zf2feeds_production/data/input/dam_ci_details/DAM_Brand_SKU_YMMP_with_Sales-last_12_months.txt",
+                    'delimiter' => "\t",
+                ),
+                'destination' => array(
+                    'collection' => "dam_ci_details",
+                    'where' => function($result) {
+                        return array('$and' =>
+                            array(
+                                array(
+                                    'SKU' => $result['SKU']
+                                ),
+                                array(
+                                    'brand' => $result['brand']
+                                ),
+                                array(
+                                    'Part Name' => $result['Part Name']
+                                ),
+                                array(
+                                    'year' => $result['max_year']
+                                ),
+                                array(
+                                    'make' => $result['make']
+                                ),
+                                array(
+                                    'model' => $result['model']
+                                )
+                            )
+                        );
+                    },
+                    'indeces' => array(
+                        'SKU','brand','Part Name','year','make','model'
+                    ),
+                    'columns' => array(
+                        'SKU' => "SKU",
+                        'Brand' => "brand",
+                        'PartName' => "Part Name",
+                        'ModelYear' => "year",
+                        'Make' => "make",
+                        'Model' => "model"
+                    ),
+                    'columnstoupdate' => array(
+                        'Sales' => "Yes"
+                    )
+                ),
+            ),
+            'HM_GROUP1' => array(
+                'source' => array(
+                    'file' => "/var/www/html/feeds_zf2feeds_production/data/input/dam_ci_details/HM_GROUP1.csv",
+                    'delimiter' => "\t",
+                ),
+                'destination' => array(
+                    'collection' => "dam_ci_details",
+                    'where' => function($result) {
+                        return array('$and' =>
+                            array(
+                                array(
+                                    'mpn' => $result['mpn']
+                                ),
+                                array(
+                                    'brand' => $result['brand']
+                                ),
+                                array(
+                                    'Part Name' => $result['Part Name']
+                                )
+                                /* array(
+                                'year' => $result['year']
+                                ),
+                                array(
+                                'make' => $result['make']
+                                ),
+                                array(
+                                'model' => $result['model']
+                                )*/
+                            )
+                        );
+                    },
+                    'indeces' => array(
+                        'mpn','brand','Part Name'//,'year','make','model'
+                    ),
+                    'columns' => array(
+                        'mpn' => "mpn",
+                        'brand' => "brand",
+                        'part' => "Part Name",
+                        /*  'ModelYear' => "year",
+                        'Make' => "make",
+                        'Model' => "model"*/
+                    ),
+                    'columnstoupdate' => array(
+                        'adwords_grouping' => "HM Group1"
+                    )
+                ),
+            ),
+            'HM_GROUP2' => array(
+                'source' => array(
+                    'file' => "/var/www/html/feeds_zf2feeds_production/data/input/dam_ci_details/HM_GROUP2.csv",
+                    'delimiter' => "\t",
+                ),
+                'destination' => array(
+                    'collection' => "dam_ci_details",
+                    'where' => function($result) {
+                        return array('$and' =>
+                            array(
+                                array(
+                                    'mpn' => $result['mpn']
+                                ),
+                                array(
+                                    'brand' => $result['brand']
+                                ),
+                                array(
+                                    'Part Name' => $result['Part Name']
+                                )
+                                /* array(
+                                'year' => $result['year']
+                                ),
+                                array(
+                                'make' => $result['make']
+                                ),
+                                array(
+                                'model' => $result['model']
+                                )*/
+                            )
+                        );
+                    },
+                    'indeces' => array(
+                        'mpn','brand','Part Name'//,'year','make','model'
+                    ),
+                    'columns' => array(
+                        'mpn' => "mpn",
+                        'brand' => "brand",
+                        'part' => "Part Name",
+                    ),
+                    'columnstoupdate' => array(
+                        'adwords_grouping' => "HM Group2"
+                    )
+                ),
+            ),
+            'HM_GROUP3' => array(
+                'source' => array(
+                'file' => "/var/www/html/feeds_zf2feeds_production/data/input/dam_ci_details/HM_GROUP3.csv",
+                    'delimiter' => "\t",
+                ),
+                'destination' => array(
+                    'collection' => "dam_ci_details",
+                    'where' => function($result) {
+                        return array('$and' =>
+                            array(
+                                array(
+                                    'mpn' => $result['mpn']
+                                ),
+                                array(
+                                    'brand' => $result['brand']
+                                ),
+                                array(
+                                    'Part Name' => $result['Part Name']
+                                )
+                                /* array(
+                                'year' => $result['year']
+                                ),
+                                array(
+                                'make' => $result['make']
+                                ),
+                                array(
+                                'model' => $result['model']
+                                )*/
+                            )
+                        );
+                    },
+                    'indeces' => array(
+                        'mpn','brand','Part Name'//,'year','make','model'
+                    ),
+                    'columns' => array(
+                        'mpn' => "mpn",
+                        'brand' => "brand",
+                        'part' => "Part Name",
+                    ),
+                    'columnstoupdate' => array(
+                        'adwords_grouping' => "HM Group3"
+                    )
+                ),
+            ),
+            'HM_GROUP4' => array(
+                'source' => array(
+                    'file' => "/var/www/html/feeds_zf2feeds_production/data/input/dam_ci_details/HM_GROUP4.csv",
+                    'delimiter' => "\t",
+                ),
+                'destination' => array(
+                    'collection' => "dam_ci_details",
+                    'where' => function($result) {
+                        return array('$and' =>
+                            array(
+                                array(
+                                    'mpn' => $result['mpn']
+                                ),
+                                array(
+                                    'brand' => $result['brand']
+                                ),
+                                array(
+                                    'Part Name' => $result['Part Name']
+                                )
+                                /* array(
+                                'year' => $result['year']
+                                ),
+                                array(
+                                'make' => $result['make']
+                                ),
+                                array(
+                                'model' => $result['model']
+                                )*/
+                            )
+                        );
+                    },
+                    'indeces' => array(
+                        'mpn','brand','Part Name'//,'year','make','model'
+                    ),
+                    'columns' => array(
+                        'mpn' => "mpn",
+                        'brand' => "brand",
+                        'part' => "Part Name",
+                    ),
+                    'columnstoupdate' => array(
+                        'adwords_grouping' => "HM Group4"
+                    )
+                ),
+            )   
+        ),
+
+        /*
+        'update' => array(
+            'source' => array(
+                'file' => "/var/www/html/dbp/DBP_ManualTitles_021914.csv"
+            ),
+            'destination' => array(
+                'collection' => "dbp_second_table",
+                'where' => function($result) {
+                    return array('SKU' => $result['SKU']);
+                },
+                'indeces' => array(
+                    'SKU'
+                ),
+                'columns' => array(
+                    'sku' => "SKU",
+                    'brand_name' => "Brand",
+                    'title' => "Title"
+                )
+            ),
+        ), //end update
+        */
+
+        'build' => array(
+            'second_table' => array(
+                "dam_ci_details"
+            ),
+            'limit' => '', //define how many data per file if filelimit is not set
+            'maxlimit' => '',
+            'filelimit' => 1, // define how many file should be generated regardless of the limit set
+            //'condition' => array('Condition' => 'New'),
+            'index' => array('condition' => 1),
+            'condition' =>  array(),
+            'headers' => array(
+                'id',
+                'title',
+                'description',
+                'mpn',
+                'gtin',
+                'link',
+                'brand',
+                'adwords_redirect',
+                'adwords_grouping',
+                'adwords_labels',
+                'product_type',
+                'color',
+                'c:location',
+                'condition',
+                'availability',
+                'image_link',
+                'price',
+                'shipping',
+                //'tax',
+                'shipping_weight',
+                'google_product_category',
+                'material',
+                'c:vehicle_name:string',
+                'c:manufacturer_category:string',
+                'c:part_location:string',
+                'c:engine:string',
+                'c:product_feature2:string',
+                'online_only',
+                'c:product_name:string',
+                'c:warranty_notes:string',
+                'c:online_purchase_payment:string',
+                'c:mirror_warranty:string',
+                'additional_image_link',
+                'c:Purchasing_Power:string',
+                'custom_label_0',
+                'custom_label_1',
+                'custom_label_2',
+                'custom_label_3',
+                'Fit Note',
+                'Year Min',
+                'Year Max',
+                'Brand Type',
+                'Design',
+                'Series',
+                'Submodel',
+                'Operation',
+                'Part Name',
+                'Product Fit',
+                'SKU',
+                'Emissions',
+                'Sales',
+                'c:cost_of_goods_sold:decimal',
+                'Title LP',
+                'Product Details',
+                'Old ID',
+                'Category',
+                'Subcategory'
+            ),
+            'exclude' => array(),
+            'dirLatest' => "/var/www/html/feeds_zf2feeds_production/data/output/dam_ci_details/latest/",
+            'dirRollback' => "/var/www/html/feeds_zf2feeds_production/data/output/dam_ci_details/rollback/",
+            'dirBackup' => "/var/www/html/feeds_zf2feeds_production/data/output/dam_ci_details/backup/",
+            'prepend' => "mirrorsale",
+            'filename' => "mirrorsale",
+            'defaultFileName' => "mirrorsale1",
+            'filetype' => "txt",
+            'delimiter' => "\t"
+        ), //end build
+
+        /*'upload' => array(
+            'host' => "feeds.adcenter.microsoft.com",
+            'port' => 21,
+            'user' => "DiscMirrorPLA",
+            'pass' => "h3llO!123",
+            'message' => "<b>Upload DAM Bing PLA at " . date('Y-m-d H:i:s') . "</b><br /><br />",
+            'prepend' => "ptBing",
+            'filetype' => "txt",
+            'local_file' => "/data/aopi/feeds_longbow/partstrain/apw_powerstop/latest/",
+            'remote_file' => "/",
+            'email' => array(
+                'to' => array(
+                    ''
+                ),
+                ''
+            )
+        )*/
+    ), //apw_powerstop
+);
