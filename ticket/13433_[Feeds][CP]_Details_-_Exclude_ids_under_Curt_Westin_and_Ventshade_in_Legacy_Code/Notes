@@ -1,0 +1,61 @@
+=========================================================================================================
+File location: /data/aopi/feeds_longbow/carparts/froogle_pla/channel_intelegence/scripts
+Branch Name: f_13433
+File Destination: console.log(console.log(/data/aopi/feeds_longbow/carparts/froogle_pla/channel_intelegence/scripts/data/latest);
+);
+
+mysql> select brand_id,brand_name from brands where brand_name in ('Curt','Westin','Ventshade') \G;
+*************************** 1. row ***************************
+  brand_id: 954
+brand_name: Curt
+*************************** 2. row ***************************
+  brand_id: 805
+brand_name: Ventshade
+*************************** 3. row ***************************
+  brand_id: 829
+brand_name: Westin
+3 rows in set (0.01 sec)
+
+
+
+
+
+insertdata.pl = getProductsPrivateLabel
+insertdata.pb = getPriorityBrand
+insertdata_branded = getProductsBranded
+
+AND (brand != 'Curt' AND brand != 'Ventshade' AND brand != 'Westin')
+AND (brand != 'Curt' OR brand != 'Ventshade' OR brand != 'Westin')
+
+AND (brand = 'Curt' AND brand = 'Ventshade' AND brand = 'Westin')
+AND (brand = 'Curt' OR brand = 'Ventshade' OR brand = 'Westin')
+
+select count(*) from cp_detailed_ci where brand = 'Curt' AND brand = 'Ventshade' AND brand = 'Westin';
+select count(*) from cp_detailed_ci where (brand != 'Curt' OR brand != 'Ventshade' OR brand != 'Westin');
+
+insert count: 
+or 4586809
+and 4581829
+
+
+2016-09-27 Snapshot insert
+Table: cp_detailed_ci
+screen id : 19651
+
+and 4575231
+or count(*) 4619079
+(brand != 'Curt' OR brand != 'Ventshade' OR brand != 'Westin') = 4619079
+
+43848
+
+queries.class.php
+general.inc.php
+config.inc.php
+config.xml
+insertdata_branded.php
+
+
+/usr/bin/php -q checktable.php -e production  -m  "masturiano@usautoparts.com"
+/usr/bin/php -q insertdata_pl.php -e production -m "masturiano@usautoparts.com"
+/usr/bin/php -q insertdata_pb.php -e production -m "masturiano@usautoparts.com" 
+/usr/bin/php -q insertdata_branded.php -e production -m "masturiano@usautoparts.com"

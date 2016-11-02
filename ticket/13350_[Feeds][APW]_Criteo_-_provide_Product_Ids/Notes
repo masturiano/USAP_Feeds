@@ -1,0 +1,31 @@
+cd /data/aopi/feeds_longbow/autopartswarehouse/criteo/criteo.staging
+
+/usr/bin/php -q checktable.php -e staging -m "masturiano@usautoparts.com"
+/usr/bin/php -q insertdata.php  -e staging -m "masturiano@usautoparts.com"
+
+Table name : apw_criteo_staging
+
+checktable.php
+insertdata.php
+queries.class.php
+
+insert.sh
+config.inc.php
+db.class.php
+
+general.inc.php
+
+buildfeed.php
+
+2016-09-27 Snapshot insert
+
+select concat('"',brand,'"',',',lb_product_id) as product_id from apw_criteo_staging limit 2 into OUTFILE '/tmp/apw_criteo_staging.csv';
+
+select concat('"',brand,'"',',',lb_product_id) as product_id from apw_criteo_staging where brand = 'replacement' into OUTFILE '/tmp/apw_criteo_staging_replacement.csv';
+Result : 958
+
+select concat('"',brand,'"',',',lb_product_id) as product_id from apw_criteo_staging where brand = 'kool vue' into OUTFILE '/tmp/apw_criteo_staging_kool_vue.csv';
+Result : 17220
+
+select concat('"',brand,'"',',',lb_product_id) as product_id from apw_criteo_staging where brand = 'evan fischer' into OUTFILE '/tmp/apw_criteo_staging_evan_fisher.csv';
+Result : 242998

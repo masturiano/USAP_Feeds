@@ -1,0 +1,499 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+JCW_DETAILS JCW_SKU
+
+=========================================================================================================
+[masturiano@ip-10-102-172-76 ~]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+[sudo] password for masturiano: 
+Please type in accounts to be uploaded, separated by spaces (sample: JCW_DETAILS JCW_SKU): JCW_DETAILS JCW_SKU
+=================================================================================
+UPLOADING JCW_DETAILS
+-rw-r--r-- 1 root root 3.4G Sep 19 08:47 jcw_froogle1.txt
+-rw-r--r-- 1 root root 3.5G Sep 19 08:52 jcw_froogle2.txt
+-rw-r--r-- 1 root root 3.0G Sep 19 08:57 jcw_froogle3.txt
+-rw-r--r-- 1 root root 601M Sep 19 09:02 compressed_jcw_feed.zip
+-rw-r--r-- 1 root root 251M Sep 19 08:48 jcw_froogle1.zip
+-rw-r--r-- 1 root root 184M Sep 19 08:53 jcw_froogle2.zip
+-rw-r--r-- 1 root root 166M Sep 19 08:58 jcw_froogle3.zip
+3.4G	jcw_froogle1.txt
+3.5G	jcw_froogle2.txt
+3.0G	jcw_froogle3.txt
+JCW Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle1.zip to /jcw_froogle1.zip
+Uploading jcw_froogle2.zip to /jcw_froogle2.zip
+Uploading jcw_froogle3.zip to /jcw_froogle3.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING JCW_SKU
+-rw-r--r-- 1 root root 1.3G Sep 19 07:19 jcw_froogle4.txt
+-rw-r--r-- 1 root root 118M Sep 19 07:20 jcw_froogle4.zip
+1.3G	jcw_froogle4.txt
+JCW SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle4.zip to /jcw_froogle4.zip
+sftp> quit
+End :  date
+PLEASE SEND THE LOGS
+
+=========================================================================================================
+
+[WHERE]: GEN04
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+CP_SKU CP_DETAILS APW_DETAILS DBP_SKU DES_SKU DAR_SKU DBK_SKU DCC_SKU CPO_SKU
+
+=========================================================================================================
+[root@ip-10-185-179-155 latest]# sh /data/feeds_script/uploadGoogleFeeds.sh
+Please type in accounts to be uploaded, separated by spaces (sample: CP_SKU CP_DETAILS APW_DETAILS DBP_SKU DES_SKU DAR_SKU DBK_SKU DCC_SKU DAR_DETAILS DES_DETAILS DBK_DETAILS CPO_SKU): CP_SKU CP_DETAILS APW_DETAILS DBP_SKU DES_SKU DAR_SKU DBK_SKU DCC_SKU CPO_SKU
+==================================================================================
+UPLOADING CP_SKU
+-rw-r--r-- 1 root root 3.8G Sep 18 21:24 carparts_ci_11.txt
+-rw-r--r-- 1 root root 263M Sep 18 21:27 carparts_ci_11.zip
+-rw-r--r-- 1 root root 263M Sep 18 21:26 cp_sku.zip
+3.8G    carparts_ci_11.txt
+CP Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> put carparts_ci_11.zip
+Uploading carparts_ci_11.zip to /carparts_ci_11.zip
+sftp> quit
+End :  date
+==================================================================================
+UPLOADING CP_DETAILS
+-rwxrwxrwx 1 root root 6.5G Sep 18 23:10 carparts_ci_10.txt
+-rwxrwxrwx 1 root root 397M Sep 18 22:48 carparts_ci_1.txt
+-rwxrwxrwx 1 root root 413M Sep 18 22:49 carparts_ci_2.txt
+-rwxrwxrwx 1 root root 401M Sep 18 22:49 carparts_ci_3.txt
+-rwxrwxrwx 1 root root 406M Sep 18 22:50 carparts_ci_4.txt
+-rwxrwxrwx 1 root root 410M Sep 18 22:51 carparts_ci_5.txt
+-rwxrwxrwx 1 root root 560M Sep 18 22:51 carparts_ci_6.txt
+-rwxrwxrwx 1 root root 385M Sep 18 22:53 carparts_ci_7.txt
+-rwxrwxrwx 1 root root 600M Sep 18 22:54 carparts_ci_8.txt
+-rwxrwxrwx 1 root root 597M Sep 18 22:55 carparts_ci_9.txt
+-rw-r--r-- 1 root root 238M Sep 18 23:13 carparts_ci_10.zip
+-rw-r--r-- 1 root root  23M Sep 18 22:48 carparts_ci_1.zip
+-rw-r--r-- 1 root root  22M Sep 18 22:49 carparts_ci_2.zip
+-rw-r--r-- 1 root root  21M Sep 18 22:49 carparts_ci_3.zip
+-rw-r--r-- 1 root root  24M Sep 18 22:50 carparts_ci_4.zip
+-rw-r--r-- 1 root root  23M Sep 18 22:51 carparts_ci_5.zip
+-rw-r--r-- 1 root root  22M Sep 18 22:52 carparts_ci_6.zip
+-rw-r--r-- 1 root root  19M Sep 18 22:53 carparts_ci_7.zip
+-rw-r--r-- 1 root root  25M Sep 18 22:54 carparts_ci_8.zip
+-rw-r--r-- 1 root root  22M Sep 18 22:55 carparts_ci_9.zip
+-rw-r--r-- 1 root root 432M Sep 18 23:17 cp.zip
+6.5G    carparts_ci_10.txt
+397M    carparts_ci_1.txt
+413M    carparts_ci_2.txt
+401M    carparts_ci_3.txt
+406M    carparts_ci_4.txt
+410M    carparts_ci_5.txt
+560M    carparts_ci_6.txt
+385M    carparts_ci_7.txt
+600M    carparts_ci_8.txt
+597M    carparts_ci_9.txt
+CP Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput carparts_ci_*.zip
+Uploading carparts_ci_1.zip to /carparts_ci_1.zip
+Uploading carparts_ci_10.zip to /carparts_ci_10.zip
+Uploading carparts_ci_2.zip to /carparts_ci_2.zip
+Uploading carparts_ci_3.zip to /carparts_ci_3.zip
+Uploading carparts_ci_4.zip to /carparts_ci_4.zip
+Uploading carparts_ci_5.zip to /carparts_ci_5.zip
+Uploading carparts_ci_6.zip to /carparts_ci_6.zip
+Uploading carparts_ci_7.zip to /carparts_ci_7.zip
+Uploading carparts_ci_8.zip to /carparts_ci_8.zip
+Uploading carparts_ci_9.zip to /carparts_ci_9.zip
+sftp> quit
+End :  date
+==================================================================================
+UPLOADING APW_DETAILS
+-rw-r--r-- 1 root root 3.8G Sep 18 21:17 base_apw_1.txt
+-rw-r--r-- 1 root root 2.6G Sep 18 21:26 base_apw_2.txt
+-rw-r--r-- 1 root root 2.8G Sep 18 21:34 base_apw_3.txt
+-rw-r--r-- 1 root root 2.8G Sep 18 21:41 base_apw_4.txt
+-rw-r--r-- 1 root root 2.6G Sep 18 21:50 base_apw_5.txt
+-rw-r--r-- 1 root root 2.8G Sep 18 21:59 base_apw_6.txt
+-rw-r--r-- 1 root root 3.0G Sep 18 22:10 base_apw_8.txt
+-rw-r--r-- 1 root root 719M Sep 18 22:21 apw_20160919.zip
+-rw-r--r-- 1 root root 152M Sep 18 22:12 base_apw_1.zip
+-rw-r--r-- 1 root root 106M Sep 18 22:14 base_apw_2.zip
+-rw-r--r-- 1 root root 107M Sep 18 22:15 base_apw_3.zip
+-rw-r--r-- 1 root root 107M Sep 18 22:17 base_apw_4.zip
+-rw-r--r-- 1 root root 102M Sep 18 22:18 base_apw_5.zip
+-rw-r--r-- 1 root root 103M Sep 18 22:19 base_apw_6.zip
+-rw-r--r-- 1 root root  94M Sep 18 22:20 base_apw_8.zip
+3.8G    base_apw_1.txt
+2.6G    base_apw_2.txt
+2.8G    base_apw_3.txt
+2.8G    base_apw_4.txt
+2.6G    base_apw_5.txt
+2.8G    base_apw_6.txt
+3.0G    base_apw_8.txt
+APW Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput base_apw_*.zip
+Uploading base_apw_1.zip to /base_apw_1.zip
+Uploading base_apw_2.zip to /base_apw_2.zip
+Uploading base_apw_3.zip to /base_apw_3.zip
+Uploading base_apw_4.zip to /base_apw_4.zip
+Uploading base_apw_5.zip to /base_apw_5.zip
+Uploading base_apw_6.zip to /base_apw_6.zip
+Uploading base_apw_8.zip to /base_apw_8.zip
+sftp> quit
+End :  date
+==================================================================================
+UPLOADING DBP_SKU
+-rw-r--r-- 1 root root 138M Sep 18 17:46 dbp_feeds11.txt
+-rw-r--r-- 1 root root 12M Sep 18 17:46 dbp_feeds11.zip
+138M    dbp_feeds11.txt
+DBP Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput dbp_feeds*.zip
+Uploading dbp_feeds11.zip to /dbp_feeds11.zip
+sftp> quit
+End :  date
+==================================================================================
+UPLOADING DES_SKU
+-rw-r--r-- 1 root root 1.9M Sep 18 19:43 des_sku.txt
+-rw-r--r-- 1 root root 569K Sep 18 19:44 des_sku.zip
+1.9M    des_sku.txt
+DES SKU upload
+Start:  Mon Sep 19 21:46:10 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111739022.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: des_sku.txt remote: des_sku.txt
+227 Entering Passive Mode (108,170,217,160,36,175)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+1953480 bytes sent in 0.9 secs (2171.21 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 21:46:12 EDT 2016
+upload.sh: line 19: /root: is a directory
+==================================================================================
+UPLOADING DAR_SKU
+-rw-r--r-- 1 root root 2.6M Sep 18 22:07 dar_sku.txt
+-rw-r--r-- 1 root root 779K Sep 18 22:07 dar_sku.zip
+2.6M    dar_sku.txt
+DAR SKU upload
+Start:  Mon Sep 19 21:46:12 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730413.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dar_sku.txt remote: dar_sku.txt
+227 Entering Passive Mode (108,170,217,160,11,234)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+2691101 bytes sent in 1.08 secs (2484.35 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 21:46:14 EDT 2016
+==================================================================================
+UPLOADING DBK_SKU
+-rw-r--r-- 1 root root 4.7M Sep 18 22:16 dbk_sku.txt
+-rw-r--r-- 1 root root 1.4M Sep 18 22:16 dbk_sku.zip
+4.7M    dbk_sku.txt
+DBK SKU upload
+Start:  Mon Sep 19 21:46:14 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730419.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dbk_sku.txt remote: dbk_sku.txt
+227 Entering Passive Mode (108,170,217,160,32,30)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+4887928 bytes sent in 1.42 secs (3444.93 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 21:46:16 EDT 2016
+==================================================================================
+UPLOADING DCC_SKU
+-rw-r--r-- 1 root root 104M Sep 18 16:46 dcc_feed2.txt
+-rw-r--r-- 1 root root 11M Sep 18 16:46 dcc_feed2.zip
+104M    dcc_feed2.txt
+DCC SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput dcc_feed*.zip
+Uploading dcc_feed2.zip to /dcc_feed2.zip
+sftp> quit
+End :  date
+==================================================================================
+UPLOADING CPO_SKU
+-rw-r--r-- 1 root root 6.3M Sep 18 21:22 cpo_sku1.txt
+-rw-r--r-- 1 root root 1.4M Sep 18 21:22 cpo_sku.zip
+6.3M    cpo_sku1.txt
+CPO SKU upload
+Start:  Mon Sep 19 21:46:27 EDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-109670851.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: cpo_sku1.txt remote: cpo_sku1.txt
+227 Entering Passive Mode (108,170,217,160,6,109)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+6543667 bytes sent in 1.53 secs (4282.73 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 21:46:29 EDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN06
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+DAM_DETAILS DAM_SKU DCC_DETAILS PT_DETAILS PT_SKU DES_DETAILS DBK_DETAILS DAR_DETAILS
+
+=========================================================================================================
+[masturiano@ip-10-142-165-162 ~]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: DAM_DETAILS DAM_SKU DCC_DETAILS PT_DETAILS PT_SKU DES_DETAILS DBK_DETAILS DAR_DETAILS): DAM_DETAILS DAM_SKU DCC_DETAILS PT_DETAILS PT_SKU DES_DETAILS DBK_DETAILS DAR_DETAILS
+=================================================================================
+UPLOADING DAM_DETAILS
+-rw-r--r-- 1 root root 1.1G Sep 18 17:05 mirrorsale1.txt
+-rw-r--r-- 1 root root 20M Sep 18 17:05 mirrorsale1.zip
+1.1G	mirrorsale1.txt
+DAM Details upload
+Start:  Mon Sep 19 18:30:07 PDT 2016
+Connecting to partnerupload.google.com...
+sftp> 
+sftp> put mirrorsale*.zip
+Uploading mirrorsale1.zip to /mirrorsale1.zip
+sftp> quit
+End :  Mon Sep 19 18:30:25 PDT 2016
+=================================================================================
+UPLOADING DAM_SKU
+-rw-r--r-- 1 root root 12M Sep 18 15:36 mirrorsale3.txt
+-rw-r--r-- 1 root root 489K Sep 18 15:36 mirrorsale3.zip
+12M	mirrorsale3.txt
+DAM Details upload
+Start:  Mon Sep 19 18:30:25 PDT 2016
+Connecting to partnerupload.google.com...
+sftp> 
+sftp> put mirrorsale*.zip
+Uploading mirrorsale3.zip to /mirrorsale3.zip
+sftp> quit
+End :  Mon Sep 19 18:30:30 PDT 2016
+=================================================================================
+UPLOADING DCC_DETAILS
+-rw-r--r-- 1 root root 11M Sep 18 15:10 dcc_feed1.txt
+-rw-r--r-- 1 root root 312K Sep 18 15:10 dcc_feed1.zip
+11M	dcc_feed1.txt
+DCC SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput dcc_feed*.zip
+Uploading dcc_feed1.zip to /dcc_feed1.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING PT_DETAILS
+-rw-r--r-- 1 root root 13G Sep 18 20:07 ptfeeds_1.txt
+-rw-r--r-- 1 root root 606M Sep 18 20:10 ptfeeds_1.zip
+13G	ptfeeds_1.txt
+PT Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> put ptfeeds_1.zip
+Uploading ptfeeds_1.zip to /ptfeeds_1.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING PT_SKU
+-rw-r--r-- 1 root root 2.8G Sep 18 18:46 ptfeeds_2.txt
+-rw-r--r-- 1 root root 155M Sep 18 18:46 ptfeeds_2.zip
+2.8G	ptfeeds_2.txt
+PT SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> put ptfeeds_2.zip
+Uploading ptfeeds_2.zip to /ptfeeds_2.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING DES_DETAILS
+-rw-r--r-- 1 root root 2.3G Sep 19 11:30 des_details.txt
+-rw-r--r-- 1 root root 72M Sep 19 11:30 des_details.zip
+2.3G	des_details.txt
+DES SKU upload
+Start:  Mon Sep 19 18:39:17 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111739022.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: des_details.txt remote: des_details.txt
+227 Entering Passive Mode (108,170,217,160,23,248)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+2457132226 bytes sent in 40.7 secs (60343.28 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:39:59 PDT 2016
+=================================================================================
+UPLOADING DBK_DETAILS
+-rw-r--r-- 1 root root 5.8G Sep 19 17:41 dbk_details.txt
+-rw-r--r-- 1 root root 186M Sep 19 17:43 dbk_details.zip
+5.8G	dbk_details.txt
+DBK SKU upload
+Start:  Mon Sep 19 18:39:59 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730419.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dbk_details.txt remote: dbk_details.txt
+227 Entering Passive Mode (108,170,217,160,25,101)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+6202785992 bytes sent in 103 secs (60215.68 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:41:43 PDT 2016
+=================================================================================
+UPLOADING DAR_DETAILS
+-rw-r--r-- 1 root root 5.0G Sep 19 18:02 dar_details.txt
+-rw-r--r-- 1 root root 176M Sep 19 18:04 dar_details.zip
+5.0G	dar_details.txt
+DAR SKU upload
+Start:  Mon Sep 19 18:41:43 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730413.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dar_details.txt remote: dar_details.txt
+227 Entering Passive Mode (108,170,217,160,22,241)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+5366453283 bytes sent in 87.8 secs (61146.62 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:43:12 PDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN07
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+APW_SKU DBP_DETAILS
+
+=========================================================================================================
+[masturiano@ip-10-120-218-224 apw_ci]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: APW_SKU DBP_DETAILS): APW_SKU DBP_DETAILS
+==================================================================================
+UPLOADING APW_SKU
+-rw-r--r-- 1 root root 3.8G Sep 18 22:37 base_apw_9.txt
+-rw-r--r-- 1 root root 1.1K Sep 18 22:19 headerAPWCI.txt
+-rw-r--r-- 1 root root 273M Sep 18 22:41 base_apw_9.zip
+3.8G	base_apw_9.txt
+4.0K	headerAPWCI.txt
+APW SKU upload
+Start:  Mon Sep 19 21:37:14 EDT 2016
+Connecting to partnerupload.google.com...
+sftp> mput base_apw_*.zip
+Uploading base_apw_9.zip to /base_apw_9.zip
+sftp> quit
+End :  Mon Sep 19 21:40:31 EDT 2016
+==================================================================================
+UPLOADING DBP_DETAILS
+-rw-r--r-- 1 root root 262M Sep 18 21:24 dbp_feeds10.txt
+-rw-r--r-- 1 root root 287M Sep 18 21:18 dbp_feeds1.txt
+-rw-r--r-- 1 root root 244M Sep 18 21:19 dbp_feeds2.txt
+-rw-r--r-- 1 root root 249M Sep 18 21:20 dbp_feeds3.txt
+-rw-r--r-- 1 root root 254M Sep 18 21:20 dbp_feeds4.txt
+-rw-r--r-- 1 root root 249M Sep 18 21:21 dbp_feeds5.txt
+-rw-r--r-- 1 root root 244M Sep 18 21:21 dbp_feeds6.txt
+-rw-r--r-- 1 root root 249M Sep 18 21:22 dbp_feeds7.txt
+-rw-r--r-- 1 root root 254M Sep 18 21:23 dbp_feeds8.txt
+-rw-r--r-- 1 root root 249M Sep 18 21:23 dbp_feeds9.txt
+-rw-r--r-- 1 root root 13M Sep 18 21:25 dbp_feeds10.zip
+-rw-r--r-- 1 root root 12M Sep 18 21:24 dbp_feeds1.zip
+-rw-r--r-- 1 root root 14M Sep 18 21:24 dbp_feeds2.zip
+-rw-r--r-- 1 root root 12M Sep 18 21:25 dbp_feeds3.zip
+-rw-r--r-- 1 root root 13M Sep 18 21:25 dbp_feeds4.zip
+-rw-r--r-- 1 root root 13M Sep 18 21:25 dbp_feeds5.zip
+-rw-r--r-- 1 root root 12M Sep 18 21:25 dbp_feeds6.zip
+-rw-r--r-- 1 root root 14M Sep 18 21:25 dbp_feeds7.zip
+-rw-r--r-- 1 root root 14M Sep 18 21:25 dbp_feeds8.zip
+-rw-r--r-- 1 root root 13M Sep 18 21:25 dbp_feeds9.zip
+262M	dbp_feeds10.txt
+287M	dbp_feeds1.txt
+244M	dbp_feeds2.txt
+249M	dbp_feeds3.txt
+254M	dbp_feeds4.txt
+249M	dbp_feeds5.txt
+244M	dbp_feeds6.txt
+249M	dbp_feeds7.txt
+254M	dbp_feeds8.txt
+249M	dbp_feeds9.txt
+DBP Details upload
+Start:  Mon Sep 19 21:40:31 EDT 2016
+Connecting to partnerupload.google.com...
+sftp> mput dbp_feeds*.zip
+Uploading dbp_feeds1.zip to /dbp_feeds1.zip
+Uploading dbp_feeds10.zip to /dbp_feeds10.zip
+Uploading dbp_feeds2.zip to /dbp_feeds2.zip
+Uploading dbp_feeds3.zip to /dbp_feeds3.zip
+Uploading dbp_feeds4.zip to /dbp_feeds4.zip
+Uploading dbp_feeds5.zip to /dbp_feeds5.zip
+Uploading dbp_feeds6.zip to /dbp_feeds6.zip
+Uploading dbp_feeds7.zip to /dbp_feeds7.zip
+Uploading dbp_feeds8.zip to /dbp_feeds8.zip
+Uploading dbp_feeds9.zip to /dbp_feeds9.zip
+sftp> quit
+End :  Mon Sep 19 21:42:12 EDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN08
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+STT_DETAILS STT_SKU
+
+=========================================================================================================
+[masturiano@ip-10-146-67-10 latest]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+[sudo] password for masturiano: 
+Please type in accounts to be uploaded, separated by spaces (sample: STT_DETAILS STT_SKU): STT_DETAILS STT_SKU
+==================================================================================
+UPLOADING STT_DETAILS
+-rw-r--r-- 1 root root 6.8G Sep 18 04:43 stfeed_1.txt
+-rw-r--r-- 1 root root 334M Sep 18 04:44 stfeed_1.zip
+6.8G	stfeed_1.txt
+STT Details CI Upload
+Start:  Mon Sep 19 18:31:56 PDT 2016
+Connecting to partnerupload.google.com...
+sftp> put stfeed_1.zip
+Uploading stfeed_1.zip to /stfeed_1.zip
+sftp> quit
+End :  Mon Sep 19 18:35:37 PDT 2016
+==================================================================================
+UPLOADING STT_SKU
+-rw-r--r-- 1 root root 1.1G Sep 18 06:45 stfeed_2.txt
+-rw-r--r-- 1 root root 86M Sep 18 06:45 stfeed_2.zip
+1.1G	stfeed_2.txt
+STT SKU CI Upload
+Start:  Mon Sep 19 18:35:37 PDT 2016
+Connecting to partnerupload.google.com...
+sftp> put stfeed_2.zip
+Uploading stfeed_2.zip to /stfeed_2.zip
+sftp> quit
+End :  Mon Sep 19 18:36:30 PDT 2016
+PLEASE SEND THE LOGS
+==================================================================================

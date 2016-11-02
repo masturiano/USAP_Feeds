@@ -1,0 +1,393 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR
+
+=========================================================================================================
+[masturiano@ip-10-102-172-76 ~]$ sudo sh /data/feeds_script/checkNonGoogleFeedsFile.sh 
+[sudo] password for masturiano: 
+Please type in accounts to be checked separated by spaces (sample: JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR): JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR
+=================================================================================
+JCW_CRITEO :
+-rw-r--r-- 1 root root 363M Sep 19 10:36 jcw_criteo1.txt
+-rw-r--r-- 1 root root  19M Sep 19 10:37 jcw_criteo.zip
+-rw-r--r-- 1 root root  281 Apr 17  2015 upload.sh
+363M	jcw_criteo1.txt
+=================================================================================
+JCW_LC :
+-rw-r--r-- 1 root root  12K Mar 23  2015 22650-2013-08-08-16-36.zip
+-rw-r--r-- 1 root root 531M Sep 19 13:31 22650-2016-09-20-04-29.csv
+-rw-r--r-- 1 root root  41M Sep 19 13:31 22650-2016-09-20-04-29.csv.gz
+du: cannot access `*.txt': No such file or directory
+=================================================================================
+JCW_CJ :
+-rw-r--r-- 1 root root 734M Sep 19 13:29 jcwdatafeed.txt
+-rw-r--r-- 1 root root  70M Sep 19 13:29 jcwdatafeed.txt.gz
+-rw-r--r-- 1 root root 101K Jun  5  2015 sample_jcwdatafeed.txt
+734M	jcwdatafeed.txt
+104K	sample_jcwdatafeed.txt
+=================================================================================
+JCW_PJ :
+-rw-r--r-- 1 root root  18K Mar 23  2015 jcw_pepperjam_20130808.zip
+-rw-r--r-- 1 root root 741M Sep 19 13:33 jcw_pepperjam.txt
+-rw-r--r-- 1 root root  50M Sep 19 13:34 jcw_pepperjam.txt.gz
+-rw-r--r-- 1 root root  61K Jun 18  2015 sample_jcw_pepperjam.txt
+741M	jcw_pepperjam.txt
+64K	sample_jcw_pepperjam.txt
+=================================================================================
+JCW_IR :
+-rw-r--r-- 1 root root  89K Sep 15 22:55 100_jcw_froogle4.txt
+-rw-r--r-- 1 root root 1.3G Sep 19 18:13 jcw_froogle4.txt
+-rw-r--r-- 1 root root 109M Sep 19 18:13 jcw_froogle4.zip
+-rw-r--r-- 1 root root  282 Aug 11 00:05 upload.sh
+92K	100_jcw_froogle4.txt
+1.3G	jcw_froogle4.txt
+[masturiano@ip-10-102-172-76 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR): JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR
+=================================================================================
+UPLOADING JCW_CRITEO
+-rw-r--r-- 1 root root 363M Sep 19 10:36 jcw_criteo1.txt
+-rw-r--r-- 1 root root 19M Sep 19 10:37 jcw_criteo.zip
+363M	jcw_criteo1.txt
+JCW Criteo upload
+Start:  Mon Sep 19 18:49:42 PDT 2016
+Connected to ftp-us.criteo.com (199.204.169.6).
+220 Welcome to Criteo FTP service.
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+250 Directory successfully changed.
+local: jcw_criteo1.txt remote: jcw_criteo1.txt
+227 Entering Passive Mode (199,204,169,6,19,158).
+150 Ok to send data.
+226 Transfer complete.
+380353011 bytes sent in 12 secs (31765.10 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:49:55 PDT 2016
+=================================================================================
+UPLOADING JCW_LC
+=================================================================================
+UPLOADING JCW_CJ
+=================================================================================
+UPLOADING JCW_PJ
+		
+=================================================================================
+UPLOADING JCW_IR
+-rw-r--r-- 1 root root  89K Sep 15 22:55 100_jcw_froogle4.txt
+-rw-r--r-- 1 root root 1.3G Sep 19 18:13 jcw_froogle4.txt
+-rw-r--r-- 1 root root 109M Sep 19 18:13 jcw_froogle4.zip
+92K	100_jcw_froogle4.txt
+1.3G	jcw_froogle4.txt
+JCW IR SKU upload
+Start:  Mon Sep 19 19:07:10 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4531.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: jcw_froogle4.zip remote: jcw_froogle4.zip
+227 Entering Passive Mode (52,3,159,168,147,189)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+114194158 bytes sent in 1.25 secs (91406.08 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 19:07:12 PDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN05
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+DAM_DETAILS_CRITEO DAM_SKU_CRITEO APW_IR PT_IR
+
+=========================================================================================================
+[masturiano@feedgen05 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: STT_FM JCW_FM APW_FM PT_FM CP_FM): STT_FM JCW_FM APW_FM PT_FM CP_FM
+=================================================================================
+UPLOADING STT_FM
+=================================================================================
+UPLOADING JCW_FM
+=================================================================================
+UPLOADING APW_FM
+=================================================================================
+UPLOADING PT_FM
+=================================================================================
+UPLOADING CP_FM
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN06
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+DAM_DETAILS_CRITEO DAM_SKU_CRITEO APW_IR PT_IR
+
+=========================================================================================================
+[masturiano@ip-10-142-165-162 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: DAM_DETAILS_CRITEO DAM_SKU_CRITEO APW_IR CP_IR PT_IR): DAM_DETAILS_CRITEO DAM_SKU_CRITEO APW_IR PT_IR
+=================================================================================
+UPLOADING DAM_DETAILS_CRITEO
+-rw-r--r-- 1 root root 1.1G Sep 18 17:05 mirrorsale1.txt
+-rw-r--r-- 1 root root 20M Sep 18 17:05 mirrorsale1.zip
+1.1G	mirrorsale1.txt
+DAM Details - DATAPOP upload
+Start:  Mon Sep 19 18:48:13 PDT 2016
+Connected to FTP.datapop.net (23.21.114.12).
+220 (vsFTPd 2.2.2)
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+local: mirrorsale1.txt remote: mirrorsale1.txt
+227 Entering Passive Mode (23,21,114,12,20,62).
+150 Ok to send data.
+226 Transfer complete.
+1147137733 bytes sent in 35.2 secs (32617.07 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:48:59 PDT 2016
+=================================================================================
+UPLOADING DAM_SKU_CRITEO
+-rw-r--r-- 1 root root 12M Sep 18 15:36 mirrorsale3.txt
+-rw-r--r-- 1 root root 489K Sep 18 15:36 mirrorsale3.zip
+12M	mirrorsale3.txt
+DAM Details - DATAPOP upload
+Start:  Mon Sep 19 18:48:59 PDT 2016
+Connected to FTP.datapop.net (23.21.114.12).
+220 (vsFTPd 2.2.2)
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+local: mirrorsale3.txt remote: mirrorsale3.txt
+227 Entering Passive Mode (23,21,114,12,19,254).
+150 Ok to send data.
+226 Transfer complete.
+12139847 bytes sent in 0.152 secs (79829.60 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:49:00 PDT 2016
+=================================================================================
+UPLOADING APW_IR
+-rw-r--r-- 1 root root 3.2G Sep 19 12:02 base_apw_9.txt
+-rw-r--r-- 1 root root 211M Sep 19 12:03 base_apw_9.zip
+3.2G	base_apw_9.txt
+APW IR SKU upload
+Start:  Mon Sep 19 18:49:00 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4530.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: base_apw_9.zip remote: base_apw_9.zip
+227 Entering Passive Mode (52,3,159,168,191,214)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+220854495 bytes sent in 2.86 secs (77107.81 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:49:03 PDT 2016
+=================================================================================
+UPLOADING PT_IR
+-rw-r--r-- 1 root root 2.8G Sep 19 04:06 ptfeeds_2.txt
+-rw-r--r-- 1 root root 158M Sep 19 04:09 ptfeeds_2.zip
+2.8G	ptfeeds_2.txt
+PT IR SKU upload
+Start:  Mon Sep 19 18:49:03 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4535.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: ptfeeds_2.zip remote: ptfeeds_2.zip
+227 Entering Passive Mode (52,3,159,168,172,100)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+165071154 bytes sent in 2.13 secs (77597.86 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:49:06 PDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN07
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING
+
+=========================================================================================================
+[masturiano@ip-10-120-218-224 apw_ci]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING): APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING
+=================================================================================
+UPLOADING APW_CJ
+=================================================================================
+UPLOADING CP_CJ
+=================================================================================
+UPLOADING PT_CJ
+=================================================================================
+UPLOADING CP_ECN
+
+========
+870416
+carpartsECN10.txt File Size: PASSED
+134852
+carpartsECN1.txt File Size: PASSED
+141572
+carpartsECN2.txt File Size: PASSED
+136932
+carpartsECN3.txt File Size: PASSED
+134524
+carpartsECN4.txt File Size: PASSED
+135468
+carpartsECN5.txt File Size: PASSED
+140476
+carpartsECN6.txt File Size: PASSED
+135656
+carpartsECN7.txt File Size: PASSED
+128672
+carpartsECN8.txt File Size: PASSED
+129076
+carpartsECN9.txt File Size: PASSED
+20160917
+carpartsECN10.txt Date: PASSED
+carpartsECN1.txt Date: PASSED
+carpartsECN2.txt Date: PASSED
+carpartsECN3.txt Date: PASSED
+carpartsECN4.txt Date: PASSED
+carpartsECN5.txt Date: PASSED
+carpartsECN6.txt Date: PASSED
+carpartsECN7.txt Date: PASSED
+carpartsECN8.txt Date: PASSED
+carpartsECN9.txt Date: PASSED
+Carparts ECN Upload
+Start:  Mon Sep 19 21:59:40 EDT 2016
+Connected to ftp.ebaycommercenetwork.com (74.120.180.135).
+220 Ebay Commerce Network FTP server ready
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for m449456
+230 User m449456 logged in
+Interactive mode off.
+200 Type set to I
+local: carpartsECN1.txt remote: carpartsECN1.txt
+227 Entering Passive Mode (74,120,180,135,202,198).
+150 Opening BINARY mode data connection for carpartsECN1.txt
+226 Transfer complete
+138084788 bytes sent in 16.5 secs (8.2e+03 Kbytes/sec)
+local: carpartsECN10.txt remote: carpartsECN10.txt
+227 Entering Passive Mode (74,120,180,135,202,210).
+150 Opening BINARY mode data connection for carpartsECN10.txt
+226 Transfer complete
+891304956 bytes sent in 110 secs (7.9e+03 Kbytes/sec)
+local: carpartsECN2.txt remote: carpartsECN2.txt
+227 Entering Passive Mode (74,120,180,135,202,241).
+150 Opening BINARY mode data connection for carpartsECN2.txt
+226 Transfer complete
+144967361 bytes sent in 31.3 secs (4.5e+03 Kbytes/sec)
+local: carpartsECN3.txt remote: carpartsECN3.txt
+227 Entering Passive Mode (74,120,180,135,202,245).
+150 Opening BINARY mode data connection for carpartsECN3.txt
+226 Transfer complete
+140216128 bytes sent in 33.7 secs (4.1e+03 Kbytes/sec)
+local: carpartsECN4.txt remote: carpartsECN4.txt
+227 Entering Passive Mode (74,120,180,135,202,252).
+150 Opening BINARY mode data connection for carpartsECN4.txt
+226 Transfer complete
+137749668 bytes sent in 30.2 secs (4.5e+03 Kbytes/sec)
+local: carpartsECN5.txt remote: carpartsECN5.txt
+227 Entering Passive Mode (74,120,180,135,202,255).
+150 Opening BINARY mode data connection for carpartsECN5.txt
+226 Transfer complete
+138717633 bytes sent in 20.6 secs (6.6e+03 Kbytes/sec)
+local: carpartsECN6.txt remote: carpartsECN6.txt
+227 Entering Passive Mode (74,120,180,135,203,5).
+150 Opening BINARY mode data connection for carpartsECN6.txt
+226 Transfer complete
+143843538 bytes sent in 25.4 secs (5.5e+03 Kbytes/sec)
+local: carpartsECN7.txt remote: carpartsECN7.txt
+227 Entering Passive Mode (74,120,180,135,203,13).
+150 Opening BINARY mode data connection for carpartsECN7.txt
+226 Transfer complete
+138911375 bytes sent in 27.6 secs (4.9e+03 Kbytes/sec)
+local: carpartsECN8.txt remote: carpartsECN8.txt
+227 Entering Passive Mode (74,120,180,135,203,35).
+150 Opening BINARY mode data connection for carpartsECN8.txt
+226 Transfer complete
+131758705 bytes sent in 31.3 secs (4.1e+03 Kbytes/sec)
+local: carpartsECN9.txt remote: carpartsECN9.txt
+227 Entering Passive Mode (74,120,180,135,203,45).
+150 Opening BINARY mode data connection for carpartsECN9.txt
+226 Transfer complete
+132172259 bytes sent in 32 secs (4e+03 Kbytes/sec)
+227 Entering Passive Mode (74,120,180,135,203,51).
+150 Opening ASCII mode data connection for file list
+-rwxrwxrwx   1 m449456  65534    138084788 Sep 20 01:59 carpartsECN1.txt
+-rwxrwxrwx   1 m449456  65534    891304956 Sep 20 02:01 carpartsECN10.txt
+-rwxrwxrwx   1 m449456  65534    144967361 Sep 20 02:02 carpartsECN2.txt
+-rwxrwxrwx   1 m449456  65534    140216128 Sep 20 02:02 carpartsECN3.txt
+-rwxrwxrwx   1 m449456  65534    137749668 Sep 20 02:03 carpartsECN4.txt
+-rwxrwxrwx   1 m449456  65534    138717633 Sep 20 02:03 carpartsECN5.txt
+-rwxrwxrwx   1 m449456  65534    143843538 Sep 20 02:04 carpartsECN6.txt
+-rwxrwxrwx   1 m449456  65534    138911375 Sep 20 02:04 carpartsECN7.txt
+-rwxrwxrwx   1 m449456  65534    131758705 Sep 20 02:05 carpartsECN8.txt
+-rwxrwxrwx   1 m449456  65534    132172259 Sep 20 02:05 carpartsECN9.txt
+drwxrwxrwx   2 m449456  65534       45056 Sep 20 02:05 feedreport
+drwxrwxrwx   2 m449456  65534        8192 Apr  4 12:18 plr
+226 Transfer complete
+221 Goodbye.
+End :  Mon Sep 19 22:05:56 EDT 2016
+=================================================================================
+UPLOADING DBP_BING
+
+========
+79076
+dbp_feeds10.txt File Size: PASSED
+86020
+dbp_feeds1.txt File Size: PASSED
+78788
+dbp_feeds2.txt File Size: PASSED
+78484
+dbp_feeds3.txt File Size: PASSED
+79956
+dbp_feeds4.txt File Size: PASSED
+78092
+dbp_feeds5.txt File Size: PASSED
+76828
+dbp_feeds6.txt File Size: FAILED
+78236
+dbp_feeds7.txt File Size: PASSED
+80016
+dbp_feeds8.txt File Size: PASSED
+78952
+dbp_feeds9.txt File Size: PASSED
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN08
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+STT_CJ STT_PJ STT_IR
+
+=========================================================================================================
+[masturiano@ip-10-146-67-10 latest]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+[sudo] password for masturiano: 
+Please type in accounts to be uploaded, separated by spaces (sample: STT_CJ STT_PJ STT_IR): STT_CJ STT_PJ STT_IR
+=================================================================================
+UPLOADING STT_CJ
+=================================================================================
+UPLOADING STT_PJ
+=================================================================================
+UPLOADING STT_IR
+STT IR SKU upload
+Start:  Mon Sep 19 18:41:54 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4534.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: stfeed_2.zip remote: stfeed_2.zip
+227 Entering Passive Mode (52,3,159,168,178,63)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+88897925 bytes sent in 1.06 secs (83532.54 Kbytes/sec)
+221 Goodbye.
+End :  Mon Sep 19 18:41:56 PDT 2016
+PLEASE SEND THE LOGS
+

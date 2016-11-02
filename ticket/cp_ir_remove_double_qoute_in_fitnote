@@ -1,0 +1,1 @@
+select * from master_template where brand = 'Akebono' and part_number = 'W0133-1844938' and fitnote like '%w/ 15%'  limit 1 \G;

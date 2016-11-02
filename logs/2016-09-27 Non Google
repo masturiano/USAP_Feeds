@@ -1,0 +1,73 @@
+=========================================================================================================
+
+[WHERE]: GEN04
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+APW_LC APW_LS APW_PJ APW_CRITEO DBP_IR
+
+=========================================================================================================
+[masturiano@ip-10-63-159-116 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample:  APW_FACEBOOK CP_FACEBOOK APW_LC APW_LS APW_PJ APW_CRITEO APW_ECN): APW_LC APW_LS APW_PJ APW_CRITEO DBP_IR                                
+=================================================================================
+UPLOADING APW_LC
+=================================================================================
+UPLOADING APW_LS
+=================================================================================
+UPLOADING APW_PJ
+=================================================================================
+UPLOADING APW_CRITEO
+-rw-r--r-- 1 root root 1.9G Sep 28 21:38 criteo_apw_1.txt
+-rw-r--r-- 1 root root  100 Sep 28 21:23 headerAPW.txt
+-rw-r--r-- 1 root root 301K Sep 13 03:48 test_criteo_apw_1000.txt
+ls: cannot access *.zip: No such file or directory
+1.9G	criteo_apw_1.txt
+4.0K	headerAPW.txt
+304K	test_criteo_apw_1000.txt
+Criteo for APW Upload
+Start:  Wed Sep 28 23:02:19 EDT 2016
+Connected to ftp.criteo.com (178.250.4.12).
+220 Welcome to Criteo FTP service.
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+250 Directory successfully changed.
+local: criteo_apw_1.txt remote: criteo_apw_1.txt
+227 Entering Passive Mode (178,250,4,12,20,9).
+150 Ok to send data.
+226 Transfer complete.
+1943257313 bytes sent in 60.5 secs (32116.53 Kbytes/sec)
+221 Goodbye.
+End :  Wed Sep 28 23:03:24 EDT 2016
+=================================================================================
+UPLOADING DBP_IR
+Could not open input file: generate.php
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN08
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+STT_CJ STT_PJ STT_IR
+
+=========================================================================================================
+UPLOADING STT_CJ
+=================================================================================
+UPLOADING STT_PJ
+=================================================================================
+UPLOADING STT_IR
+STT IR SKU upload
+Start:  Wed Sep 28 20:14:17 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4534.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: stfeed_2.zip remote: stfeed_2.zip
+227 Entering Passive Mode (52,3,159,168,237,15)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+88784513 bytes sent in 0.83 secs (106944.42 Kbytes/sec)
+221 Goodbye.
+End :  Wed Sep 28 20:14:19 PDT 2016
+PLEASE SEND THE LOGS
+

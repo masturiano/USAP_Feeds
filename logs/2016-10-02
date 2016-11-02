@@ -1,0 +1,114 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+JCW_DETAILS JCW_SKU
+
+=========================================================================================================
+[masturiano@ip-10-234-107-143 ~]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: JCW_DETAILS JCW_SKU): JCW_DETAILS JCW_SKU
+=================================================================================
+UPLOADING JCW_DETAILS
+-rw-r--r-- 1 root root 3.4G Oct  3 11:13 jcw_froogle1.txt
+-rw-r--r-- 1 root root 3.5G Oct  3 11:18 jcw_froogle2.txt
+-rw-r--r-- 1 root root 3.1G Oct  3 11:23 jcw_froogle3.txt
+-rw-r--r-- 1 root root 604M Oct  3 11:28 compressed_jcw_feed.zip
+-rw-r--r-- 1 root root 252M Oct  3 11:15 jcw_froogle1.zip
+-rw-r--r-- 1 root root 184M Oct  3 11:20 jcw_froogle2.zip
+-rw-r--r-- 1 root root 170M Oct  3 11:25 jcw_froogle3.zip
+3.4G	jcw_froogle1.txt
+3.5G	jcw_froogle2.txt
+3.1G	jcw_froogle3.txt
+JCW Details upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle1.zip to /jcw_froogle1.zip
+Uploading jcw_froogle2.zip to /jcw_froogle2.zip
+Uploading jcw_froogle3.zip to /jcw_froogle3.zip
+sftp> quit
+End :  date
+=================================================================================
+UPLOADING JCW_SKU
+-rw-r--r-- 1 root root 1.4G Oct  3 09:52 jcw_froogle4.txt
+-rw-r--r-- 1 root root 119M Oct  3 09:52 jcw_froogle4.zip
+1.4G	jcw_froogle4.txt
+JCW SKU upload
+Start:  date
+Connecting to partnerupload.google.com...
+sftp> mput jcw_froogle*.zip
+Uploading jcw_froogle4.zip to /jcw_froogle4.zip
+sftp> quit
+End :  date
+PLEASE SEND THE LOGS
+=================================================================================
+
+[WHERE]: GEN06
+> sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+DES_DETAILS DAR_DETAILS DBK_DETAILS
+
+========================================================================================================
+[masturiano@ip-10-181-32-215 ~]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: DAM_DETAILS DAM_SKU DCC_DETAILS PT_DETAILS PT_SKU DES_DETAILS DBK_DETAILS DAR_DETAILS): DES_DETAILS DAR_DETAILS DBK_DETAILS
+=================================================================================
+UPLOADING DES_DETAILS
+-rw-r--r-- 1 root root 2.4G Oct  3 10:24 des_details.txt
+-rw-r--r-- 1 root root 75M Oct  3 10:25 des_details.zip
+2.4G	des_details.txt
+DES SKU upload
+Start:  Mon Oct 3 16:53:13 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111739022.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: des_details.txt remote: des_details.txt
+227 Entering Passive Mode (108,170,217,160,37,132)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+2556437566 bytes sent in 44.3 secs (57704.22 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 16:53:58 PDT 2016
+=================================================================================
+UPLOADING DAR_DETAILS
+-rw-r--r-- 1 root root 5.1G Oct  3 16:37 dar_details.txt
+-rw-r--r-- 1 root root 177M Oct  3 16:38 dar_details.zip
+5.1G	dar_details.txt
+DAR SKU upload
+Start:  Mon Oct 3 16:53:58 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730413.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dar_details.txt remote: dar_details.txt
+227 Entering Passive Mode (108,170,217,160,5,240)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+5381960116 bytes sent in 94.2 secs (57124.81 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 16:55:33 PDT 2016
+=================================================================================
+UPLOADING DBK_DETAILS
+-rw-r--r-- 1 root root 5.8G Oct  3 16:16 dbk_details.txt
+-rw-r--r-- 1 root root 187M Oct  3 16:18 dbk_details.zip
+5.8G	dbk_details.txt
+DBK SKU upload
+Start:  Mon Oct 3 16:55:33 PDT 2016
+Connected to uploads.google.com (108.170.217.160).
+220 Service ready for new user.
+331 User name okay, need password for mc-ftp-111730419.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: dbk_details.txt remote: dbk_details.txt
+227 Entering Passive Mode (108,170,217,160,15,167)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+6224058276 bytes sent in 107 secs (57982.77 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 16:57:21 PDT 2016
+PLEASE SEND THE LOGS
+=================================================================================

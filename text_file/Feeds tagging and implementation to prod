@@ -1,0 +1,10 @@
+===============
+===== GIT =====
+===============
+
+1. checkout to develop
+2. merge branch to develop
+3. create tagging
+4. push tagging to origin
+5. merge tagging to master
+6. push master to origin

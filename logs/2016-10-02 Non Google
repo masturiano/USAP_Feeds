@@ -1,0 +1,543 @@
+=========================================================================================================
+
+[WHERE]: GEN01
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+JCW_CRITEO JCW_LC JCW_CJ JCW_PJ
+
+=========================================================================================================
+[masturiano@ip-10-234-107-143 ~]$ sudo sh /data/feeds_script/checkNonGoogleFeedsFile.sh 
+[sudo] password for masturiano: 
+Please type in accounts to be checked separated by spaces (sample: JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR): JCW_CRITEO JCW_LC JCW_CJ JCW_PJ
+=================================================================================
+JCW_CRITEO :
+-rw-r--r-- 1 root root 366M Oct  3 13:09 jcw_criteo1.txt
+-rw-r--r-- 1 root root  20M Oct  3 13:09 jcw_criteo.zip
+-rw-r--r-- 1 root root  281 Apr 17  2015 upload.sh
+366M	jcw_criteo1.txt
+=================================================================================
+JCW_LC :
+-rw-r--r-- 1 root root  12K Mar 23  2015 22650-2013-08-08-16-36.zip
+-rw-r--r-- 1 root root 534M Oct  3 16:04 22650-2016-10-04-07-02.csv
+-rw-r--r-- 1 root root  41M Oct  3 16:04 22650-2016-10-04-07-02.csv.gz
+du: cannot access `*.txt': No such file or directory
+=================================================================================
+JCW_CJ :
+-rw-r--r-- 1 root root 737M Oct  3 16:02 jcwdatafeed.txt
+-rw-r--r-- 1 root root  71M Oct  3 16:02 jcwdatafeed.txt.gz
+-rw-r--r-- 1 root root 101K Jun  5  2015 sample_jcwdatafeed.txt
+737M	jcwdatafeed.txt
+104K	sample_jcwdatafeed.txt
+=================================================================================
+JCW_PJ :
+-rw-r--r-- 1 root root  18K Mar 23  2015 jcw_pepperjam_20130808.zip
+-rw-r--r-- 1 root root 746M Oct  3 16:07 jcw_pepperjam.txt
+-rw-r--r-- 1 root root  50M Oct  3 16:07 jcw_pepperjam.txt.gz
+-rw-r--r-- 1 root root  61K Jun 18  2015 sample_jcw_pepperjam.txt
+746M	jcw_pepperjam.txt
+64K	sample_jcw_pepperjam.txt
+[masturiano@ip-10-234-107-143 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: JCW_CRITEO JCW_LC JCW_CJ JCW_PJ JCW_IR): JCW_CRITEO JCW_LC JCW_CJ JCW_PJ
+=================================================================================
+UPLOADING JCW_CRITEO
+-rw-r--r-- 1 root root 366M Oct  3 13:09 jcw_criteo1.txt
+-rw-r--r-- 1 root root 20M Oct  3 13:09 jcw_criteo.zip
+366M	jcw_criteo1.txt
+JCW Criteo upload
+Start:  Mon Oct 3 17:07:21 PDT 2016
+Connected to ftp-us.criteo.com (199.204.169.6).
+220 Welcome to Criteo FTP service.
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+250 Directory successfully changed.
+local: jcw_criteo1.txt remote: jcw_criteo1.txt
+227 Entering Passive Mode (199,204,169,6,21,89).
+150 Ok to send data.
+226 Transfer complete.
+382881515 bytes sent in 13 secs (29447.91 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 17:07:35 PDT 2016
+=================================================================================
+UPLOADING JCW_LC
+=================================================================================
+UPLOADING JCW_CJ
+=================================================================================
+UPLOADING JCW_PJ
+		
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN04
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+APW_LC APW_LS APW_PJ APW_ECN APW_CRITEO DBP_IR
+
+=========================================================================================================
+[masturiano@ip-10-154-144-105 ~]$ sudo sh /data/feeds_script/uploadGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: CP_SKU CP_DETAILS APW_DETAILS DBP_SKU DES_SKU DAR_SKU DBK_SKU DCC_SKU CP_CURT CPO_SKU): APW_LC APW_LS APW_PJ APW_ECN APW_CRITEO DBP_IR
+==================================================================================
+UPLOADING APW_LC
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+==================================================================================
+UPLOADING APW_LS
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+==================================================================================
+UPLOADING APW_PJ
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+==================================================================================
+UPLOADING APW_ECN
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+==================================================================================
+UPLOADING APW_CRITEO
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+==================================================================================
+UPLOADING DBP_IR
+-rw-r--r-- 1 root root 5.5K Nov  3  2015 check.txt
+ls: cannot access *.zip: No such file or directory
+8.0K	check.txt
+sh: upload.sh: No such file or directory
+PLEASE SEND THE LOGS
+[masturiano@ip-10-154-144-105 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample:  APW_FACEBOOK CP_FACEBOOK APW_LC APW_LS APW_PJ APW_CRITEO APW_ECN): APW_LC APW_LS APW_PJ APW_ECN APW_CRITEO DBP_IR
+=================================================================================
+UPLOADING APW_LC
+=================================================================================
+UPLOADING APW_LS
+=================================================================================
+UPLOADING APW_PJ
+=================================================================================
+UPLOADING APW_ECN
+-rw-r--r-- 1 root root 1.3G Oct  3 01:43 APWECN10.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 01:56 APWECN11.txt
+-rw-r--r-- 1 root root 806M Oct  3 02:05 APWECN12.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 00:32 APWECN1.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 00:36 APWECN2.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 00:41 APWECN3.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 00:46 APWECN4.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 00:53 APWECN5.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 01:00 APWECN6.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 01:08 APWECN7.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 01:19 APWECN8.txt
+-rw-r--r-- 1 root root 1.3G Oct  3 01:30 APWECN9.txt
+-rw-r--r-- 1 root root 685M Oct  3 02:14 apw_20161003.zip
+-rw-r--r-- 1 root root  59M Oct  3 02:13 APWECN10.zip
+-rw-r--r-- 1 root root  63M Oct  3 02:13 APWECN11.zip
+-rw-r--r-- 1 root root  42M Oct  3 02:14 APWECN12.zip
+-rw-r--r-- 1 root root  62M Oct  3 02:07 APWECN1.zip
+-rw-r--r-- 1 root root  60M Oct  3 02:08 APWECN2.zip
+-rw-r--r-- 1 root root  60M Oct  3 02:08 APWECN3.zip
+-rw-r--r-- 1 root root  58M Oct  3 02:09 APWECN4.zip
+-rw-r--r-- 1 root root  61M Oct  3 02:10 APWECN5.zip
+-rw-r--r-- 1 root root  64M Oct  3 02:10 APWECN6.zip
+-rw-r--r-- 1 root root  66M Oct  3 02:11 APWECN7.zip
+-rw-r--r-- 1 root root  63M Oct  3 02:11 APWECN8.zip
+-rw-r--r-- 1 root root  64M Oct  3 02:12 APWECN9.zip
+1.3G	APWECN10.txt
+1.3G	APWECN11.txt
+806M	APWECN12.txt
+1.3G	APWECN1.txt
+1.3G	APWECN2.txt
+1.3G	APWECN3.txt
+1.3G	APWECN4.txt
+1.3G	APWECN5.txt
+1.3G	APWECN6.txt
+1.3G	APWECN7.txt
+1.3G	APWECN8.txt
+1.3G	APWECN9.txt
+upload.sh: line 5: cd: ../data/output/latest/: No such file or directory
+APW ECN Upload
+Start:  Mon Oct 3 20:06:47 EDT 2016
+Connected to ftp.ebaycommercenetwork.com (74.120.180.135).
+220 Ebay Commerce Network FTP server ready
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for m403386
+230 User m403386 logged in
+Interactive mode off.
+200 Type set to I
+local: APWECN1.txt remote: APWECN1.txt
+227 Entering Passive Mode (74,120,180,135,154,24).
+150 Opening BINARY mode data connection for APWECN1.txt
+226 Transfer complete
+1344581067 bytes sent in 71.8 secs (18737.09 Kbytes/sec)
+local: APWECN10.txt remote: APWECN10.txt
+227 Entering Passive Mode (74,120,180,135,154,45).
+150 Opening BINARY mode data connection for APWECN10.txt
+226 Transfer complete
+1315777436 bytes sent in 60.2 secs (21859.21 Kbytes/sec)
+local: APWECN11.txt remote: APWECN11.txt
+227 Entering Passive Mode (74,120,180,135,154,120).
+150 Opening BINARY mode data connection for APWECN11.txt
+226 Transfer complete
+1321758521 bytes sent in 75.9 secs (17417.57 Kbytes/sec)
+local: APWECN12.txt remote: APWECN12.txt
+227 Entering Passive Mode (74,120,180,135,154,127).
+150 Opening BINARY mode data connection for APWECN12.txt
+226 Transfer complete
+844662559 bytes sent in 64.2 secs (13166.11 Kbytes/sec)
+local: APWECN2.txt remote: APWECN2.txt
+227 Entering Passive Mode (74,120,180,135,154,139).
+150 Opening BINARY mode data connection for APWECN2.txt
+226 Transfer complete
+1369854468 bytes sent in 56.2 secs (24379.26 Kbytes/sec)
+local: APWECN3.txt remote: APWECN3.txt
+227 Entering Passive Mode (74,120,180,135,154,143).
+150 Opening BINARY mode data connection for APWECN3.txt
+226 Transfer complete
+1368459950 bytes sent in 83.8 secs (16324.17 Kbytes/sec)
+local: APWECN4.txt remote: APWECN4.txt
+227 Entering Passive Mode (74,120,180,135,154,152).
+150 Opening BINARY mode data connection for APWECN4.txt
+226 Transfer complete
+1367386866 bytes sent in 42.1 secs (32479.21 Kbytes/sec)
+local: APWECN5.txt remote: APWECN5.txt
+227 Entering Passive Mode (74,120,180,135,154,156).
+150 Opening BINARY mode data connection for APWECN5.txt
+226 Transfer complete
+1361629680 bytes sent in 65.2 secs (20876.12 Kbytes/sec)
+local: APWECN6.txt remote: APWECN6.txt
+227 Entering Passive Mode (74,120,180,135,154,161).
+150 Opening BINARY mode data connection for APWECN6.txt
+226 Transfer complete
+1337685587 bytes sent in 60.2 secs (22227.28 Kbytes/sec)
+local: APWECN7.txt remote: APWECN7.txt
+227 Entering Passive Mode (74,120,180,135,154,182).
+150 Opening BINARY mode data connection for APWECN7.txt
+226 Transfer complete
+1336213224 bytes sent in 52.9 secs (25240.63 Kbytes/sec)
+local: APWECN8.txt remote: APWECN8.txt
+227 Entering Passive Mode (74,120,180,135,154,205).
+150 Opening BINARY mode data connection for APWECN8.txt
+226 Transfer complete
+1320263543 bytes sent in 76.9 secs (17171.52 Kbytes/sec)
+local: APWECN9.txt remote: APWECN9.txt
+227 Entering Passive Mode (74,120,180,135,154,222).
+150 Opening BINARY mode data connection for APWECN9.txt
+226 Transfer complete
+1330444815 bytes sent in 42.4 secs (31347.28 Kbytes/sec)
+227 Entering Passive Mode (74,120,180,135,155,42).
+150 Opening ASCII mode data connection for file list
+-rwxrwxrwx   1 m403386  65534    1344581067 Oct  4 00:08 APWECN1.txt
+-rwxrwxrwx   1 m403386  65534    1315777436 Oct  4 00:09 APWECN10.txt
+-rw-r--r--   1 m403386  65533    1321758521 Oct  4 00:10 APWECN11.txt
+-rw-r--r--   1 m403386  65533    844662559 Oct  4 00:11 APWECN12.txt
+-rwxrwxrwx   1 m403386  65534    1369854468 Oct  4 00:12 APWECN2.txt
+-rwxrwxrwx   1 m403386  65534    1368459950 Oct  4 00:14 APWECN3.txt
+-rwxrwxrwx   1 m403386  65534    1367386866 Oct  4 00:14 APWECN4.txt
+-rwxrwxrwx   1 m403386  65534    1361629680 Oct  4 00:16 APWECN5.txt
+-rwxrwxrwx   1 m403386  65534    1337685587 Oct  4 00:17 APWECN6.txt
+-rwxrwxrwx   1 m403386  65534    1336213224 Oct  4 00:18 APWECN7.txt
+-rwxrwxrwx   1 m403386  65534    1320263543 Oct  4 00:19 APWECN8.txt
+-rwxrwxrwx   1 m403386  65534    1330444815 Oct  4 00:20 APWECN9.txt
+drwxrwxrwx   2 m403386  65534      126976 Oct  3 19:40 feedreport
+drwxrwxrwx   2 m403386  65534        8192 Apr  4  2016 plr
+226 Transfer complete
+221 Goodbye.
+End :  Mon Oct 3 20:20:14 EDT 2016
+=================================================================================
+UPLOADING APW_CRITEO
+-rw-r--r-- 1 root root 1.9G Oct  3 02:16 criteo_apw_1.txt
+-rw-r--r-- 1 root root  100 Oct  3 02:01 headerAPW.txt
+-rw-r--r-- 1 root root 301K Sep 13 03:48 test_criteo_apw_1000.txt
+ls: cannot access *.zip: No such file or directory
+1.9G	criteo_apw_1.txt
+4.0K	headerAPW.txt
+304K	test_criteo_apw_1000.txt
+Criteo for APW Upload
+Start:  Mon Oct 3 20:20:14 EDT 2016
+Connected to ftp.criteo.com (178.250.4.12).
+220 Welcome to Criteo FTP service.
+331 Please specify the password.
+230 Login successful.
+Interactive mode off.
+200 Switching to Binary mode.
+250 Directory successfully changed.
+local: criteo_apw_1.txt remote: criteo_apw_1.txt
+227 Entering Passive Mode (178,250,4,12,20,140).
+150 Ok to send data.
+226 Transfer complete.
+1956424965 bytes sent in 62.5 secs (31291.86 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 20:21:21 EDT 2016
+=================================================================================
+UPLOADING DBP_IR
+Could not open input file: generate.php
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN06
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+APW_IR CP_IR
+
+=========================================================================================================
+[masturiano@ip-10-181-32-215 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: DAM_DETAILS_CRITEO DAM_SKU_CRITEO APW_IR CP_IR PT_IR): APW_IR CP_IR
+=================================================================================
+UPLOADING APW_IR
+-rw-r--r-- 1 root root 3.2G Oct  3 10:54 base_apw_9.txt
+-rw-r--r-- 1 root root 212M Oct  3 10:56 base_apw_9.zip
+3.2G	base_apw_9.txt
+APW IR SKU upload
+Start:  Mon Oct 3 17:10:43 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4530.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: base_apw_9.zip remote: base_apw_9.zip
+227 Entering Passive Mode (52,3,159,168,190,245)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+222236068 bytes sent in 28.6 secs (7770.02 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 17:11:13 PDT 2016
+=================================================================================
+UPLOADING CP_IR
+-rw-r--r-- 1 root root 2.5G Oct  3 06:13 cp_ir_sku.txt
+-rw-r--r-- 1 root root 165M Oct  3 06:14 cp_ir_sku.zip
+2.5G	cp_ir_sku.txt
+CP IR SKU upload
+Start:  Mon Oct 3 17:11:13 PDT 2016
+Connected to products.impactradius.com (52.3.159.168).
+220 Service ready for new user.
+331 User name okay, need password for ps-ftp_261951_4532.
+230 User logged in, proceed.
+Interactive mode off.
+200 Command TYPE okay.
+local: cp_ir_sku.zip remote: cp_ir_sku.zip
+227 Entering Passive Mode (52,3,159,168,205,179)
+150 File status okay; about to open data connection.
+226 Transfer complete.
+172461961 bytes sent in 23.8 secs (7246.88 Kbytes/sec)
+221 Goodbye.
+End :  Mon Oct 3 17:11:38 PDT 2016
+PLEASE SEND THE LOGS
+=========================================================================================================
+
+[WHERE]: GEN05
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+STT_FM JCW_FM APW_FM PT_FM USAP_FM CP_FM
+
+=========================================================================================================
+[masturiano@feedgen05 latest]$ sudo sh /data/feeds_script/checkdNonGoogleFeedsFile.sh 
+Please type in accounts to be checked, separated by spaces (sample: STT_FM JCW_FM APW_FM PT_FM USAP_FM CP_FM): STT_FM JCW_FM APW_FM PT_FM USAP_FM CP_FM
+=================================================================================
+UPLOADING STT_FM
+-rw-r--r-- 1 root root 1.4G Oct  2 23:13 stt_frugal.csv
+1.4G	stt_frugal.csv
+=================================================================================
+UPLOADING JCW_FM
+-rw-r--r-- 1 root root 1.2G Oct  2 21:09 jcw_frugal.csv
+1.2G	jcw_frugal.csv
+=================================================================================
+UPLOADING APW_FM
+-rw-r--r-- 1 root root 1.7G Oct  2 22:17 apw_frugal.csv
+1.7G	apw_frugal.csv
+=================================================================================
+UPLOADING PT_FM
+-rw-r--r-- 1 root root 2.1G Oct  3 02:12 pt_frugal.csv
+2.1G	pt_frugal.csv
+=================================================================================
+UPLOADING USAP_FM
+-rwxr-xr-x 1 root root 1.8G Oct  3 03:07 usap_frugal.csv
+1.8G	usap_frugal.csv
+=================================================================================
+UPLOADING CP_FM
+-rwxr-xr-x 1 root root 2.1G Oct  3 00:27 cp_frugal.csv
+2.1G	cp_frugal.csv
+[masturiano@feedgen05 latest]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: STT_FM JCW_FM APW_FM PT_FM CP_FM): STT_FM JCW_FM APW_FM PT_FM USAP_FM CP_FM
+=================================================================================
+UPLOADING STT_FM
+=================================================================================
+UPLOADING JCW_FM
+=================================================================================
+UPLOADING APW_FM
+=================================================================================
+UPLOADING PT_FM
+=================================================================================
+UPLOADING USAP_FM
+=================================================================================
+UPLOADING CP_FM
+PLEASE SEND THE LOGS
+=================================================================================
+=========================================================================================================
+
+[WHERE]: GEN07
+> sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING
+
+=========================================================================================================
+[masturiano@ip-10-86-146-129 ~]$ sudo sh /data/feeds_script/uploadNonGoogleFeeds.sh 
+Please type in accounts to be uploaded, separated by spaces (sample: APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING): APW_CJ CP_CJ PT_CJ CP_ECN DBP_BING
+=================================================================================
+UPLOADING APW_CJ
+=================================================================================
+UPLOADING CP_CJ
+=================================================================================
+UPLOADING PT_CJ
+=================================================================================
+UPLOADING CP_ECN
+
+========
+851144
+carpartsECN10.txt File Size: PASSED
+134772
+carpartsECN1.txt File Size: PASSED
+141660
+carpartsECN2.txt File Size: PASSED
+136672
+carpartsECN3.txt File Size: PASSED
+134524
+carpartsECN4.txt File Size: PASSED
+135464
+carpartsECN5.txt File Size: PASSED
+140372
+carpartsECN6.txt File Size: PASSED
+135136
+carpartsECN7.txt File Size: PASSED
+128772
+carpartsECN8.txt File Size: PASSED
+129092
+carpartsECN9.txt File Size: PASSED
+20161001
+carpartsECN10.txt Date: PASSED
+carpartsECN1.txt Date: PASSED
+carpartsECN2.txt Date: PASSED
+carpartsECN3.txt Date: PASSED
+carpartsECN4.txt Date: PASSED
+carpartsECN5.txt Date: PASSED
+carpartsECN6.txt Date: PASSED
+carpartsECN7.txt Date: PASSED
+carpartsECN8.txt Date: PASSED
+carpartsECN9.txt Date: PASSED
+Carparts ECN Upload
+Start:  Mon Oct 3 20:16:34 EDT 2016
+Connected to ftp.ebaycommercenetwork.com (74.120.180.135).
+220 Ebay Commerce Network FTP server ready
+Remote system type is UNIX.
+Using binary mode to transfer files.
+331 Password required for m449456
+230 User m449456 logged in
+Interactive mode off.
+200 Type set to I
+local: carpartsECN1.txt remote: carpartsECN1.txt
+227 Entering Passive Mode (74,120,180,135,204,76).
+150 Opening BINARY mode data connection for carpartsECN1.txt
+226 Transfer complete
+138005992 bytes sent in 27.1 secs (5e+03 Kbytes/sec)
+local: carpartsECN10.txt remote: carpartsECN10.txt
+227 Entering Passive Mode (74,120,180,135,204,79).
+150 Opening BINARY mode data connection for carpartsECN10.txt
+226 Transfer complete
+871570792 bytes sent in 113 secs (7.5e+03 Kbytes/sec)
+local: carpartsECN2.txt remote: carpartsECN2.txt
+227 Entering Passive Mode (74,120,180,135,204,87).
+150 Opening BINARY mode data connection for carpartsECN2.txt
+226 Transfer complete
+145057625 bytes sent in 42.1 secs (3.4e+03 Kbytes/sec)
+local: carpartsECN3.txt remote: carpartsECN3.txt
+227 Entering Passive Mode (74,120,180,135,204,92).
+150 Opening BINARY mode data connection for carpartsECN3.txt
+226 Transfer complete
+139950228 bytes sent in 34.4 secs (4e+03 Kbytes/sec)
+local: carpartsECN4.txt remote: carpartsECN4.txt
+227 Entering Passive Mode (74,120,180,135,204,97).
+150 Opening BINARY mode data connection for carpartsECN4.txt
+226 Transfer complete
+137749072 bytes sent in 23.2 secs (5.8e+03 Kbytes/sec)
+local: carpartsECN5.txt remote: carpartsECN5.txt
+227 Entering Passive Mode (74,120,180,135,204,99).
+150 Opening BINARY mode data connection for carpartsECN5.txt
+226 Transfer complete
+138712981 bytes sent in 36.6 secs (3.7e+03 Kbytes/sec)
+local: carpartsECN6.txt remote: carpartsECN6.txt
+227 Entering Passive Mode (74,120,180,135,204,103).
+150 Opening BINARY mode data connection for carpartsECN6.txt
+226 Transfer complete
+143737239 bytes sent in 24 secs (5.9e+03 Kbytes/sec)
+local: carpartsECN7.txt remote: carpartsECN7.txt
+227 Entering Passive Mode (74,120,180,135,204,107).
+150 Opening BINARY mode data connection for carpartsECN7.txt
+226 Transfer complete
+138376759 bytes sent in 25.4 secs (5.3e+03 Kbytes/sec)
+local: carpartsECN8.txt remote: carpartsECN8.txt
+227 Entering Passive Mode (74,120,180,135,204,110).
+150 Opening BINARY mode data connection for carpartsECN8.txt
+226 Transfer complete
+131859392 bytes sent in 20.4 secs (6.3e+03 Kbytes/sec)
+local: carpartsECN9.txt remote: carpartsECN9.txt
+227 Entering Passive Mode (74,120,180,135,204,112).
+150 Opening BINARY mode data connection for carpartsECN9.txt
+226 Transfer complete
+132189884 bytes sent in 29.4 secs (4.4e+03 Kbytes/sec)
+227 Entering Passive Mode (74,120,180,135,204,117).
+150 Opening ASCII mode data connection for file list
+-rwxrwxrwx   1 m449456  65534    138005992 Oct  4 00:17 carpartsECN1.txt
+-rwxrwxrwx   1 m449456  65534    871570792 Oct  4 00:19 carpartsECN10.txt
+-rwxrwxrwx   1 m449456  65534    145057625 Oct  4 00:19 carpartsECN2.txt
+-rwxrwxrwx   1 m449456  65534    139950228 Oct  4 00:20 carpartsECN3.txt
+-rwxrwxrwx   1 m449456  65534    137749072 Oct  4 00:20 carpartsECN4.txt
+-rwxrwxrwx   1 m449456  65534    138712981 Oct  4 00:21 carpartsECN5.txt
+-rwxrwxrwx   1 m449456  65534    143737239 Oct  4 00:21 carpartsECN6.txt
+-rwxrwxrwx   1 m449456  65534    138376759 Oct  4 00:22 carpartsECN7.txt
+-rwxrwxrwx   1 m449456  65534    131859392 Oct  4 00:22 carpartsECN8.txt
+-rwxrwxrwx   1 m449456  65534    132189884 Oct  4 00:23 carpartsECN9.txt
+drwxrwxrwx   2 m449456  65534       45056 Oct  3 19:31 feedreport
+drwxrwxrwx   2 m449456  65534        8192 Apr  4  2016 plr
+226 Transfer complete
+221 Goodbye.
+End :  Mon Oct 3 20:23:07 EDT 2016
+=================================================================================
+UPLOADING DBP_BING
+
+========
+84576
+dbp_feeds10.txt File Size: PASSED
+93384
+dbp_feeds1.txt File Size: PASSED
+82888
+dbp_feeds2.txt File Size: PASSED
+84480
+dbp_feeds3.txt File Size: PASSED
+85400
+dbp_feeds4.txt File Size: PASSED
+83172
+dbp_feeds5.txt File Size: PASSED
+82020
+dbp_feeds6.txt File Size: PASSED
+84084
+dbp_feeds7.txt File Size: PASSED
+85512
+dbp_feeds8.txt File Size: PASSED
+84224
+dbp_feeds9.txt File Size: PASSED
+20161001
+dbp_feeds10.txt Date: PASSED
+dbp_feeds1.txt Date: PASSED
+dbp_feeds2.txt Date: PASSED
+dbp_feeds3.txt Date: PASSED
+dbp_feeds4.txt Date: PASSED
+dbp_feeds5.txt Date: PASSED
+dbp_feeds6.txt Date: PASSED
+dbp_feeds7.txt Date: PASSED
+dbp_feeds8.txt Date: PASSED
+dbp_feeds9.txt Date: PASSED
+PLEASE SEND THE LOGS
+=================================================================================
